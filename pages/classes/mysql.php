@@ -52,7 +52,6 @@ class MySQL{
 			}else{
 				return 0;
 			}
-			
 		}
 	}
 	
@@ -83,6 +82,78 @@ class MySQL{
 			return 'Error: '.$e->getMessage();
 		}
 	}
-	};
+	
+	public function insere_perfil($nome,$ativo){
+		try{
+			$result = $this->con->prepare(	" INSERT INTO tb_perfil(DESC_PERFIL, ATIVO, CREATEDAT) VALUES (:nome,:ativo,NOW())");
+			$result->execute(array(
+				':nome'=> (string) $nome,
+				':ativo'=> (int) $ativo
+			));
+			
+			return 1;
+		}catch(PDOException $e){
+			return 'Error: '.$e->getMessage();
+		}
+	}
+	
+	public function insere_grupo($nome,$ativo){
+		try{
+			$result = $this->con->prepare(	" INSERT INTO tb_grupo_produto (DESC_GRUP, ATIVO, CREATEDAT) VALUES (:nome,:ativo,NOW())");
+			$result->execute(array(
+				':nome'=> (string) $nome,
+				':ativo'=> (int) $ativo
+			));
+			
+			return 1;
+		}catch(PDOException $e){
+			return 'Error: '.$e->getMessage();
+		}
+	}
+	
+	public function insere_tipo_serv($nome,$ativo){
+		try{
+			$result = $this->con->prepare(	" INSERT INTO tb_tpo_servico (DESC_TPOSERV, ATIVO, CREATEDAT) VALUES (:nome,:ativo,NOW())");
+			$result->execute(array(
+				':nome'=> (string) $nome,
+				':ativo'=> (int) $ativo
+			));
+			
+			return 1;
+		}catch(PDOException $e){
+			return 'Error: '.$e->getMessage();
+		}
+	}
+	
+	public function insere_colab($nome,$ativo){
+		try{
+			$result = $this->con->prepare(	" INSERT INTO tb_tpo_servico (DESC_TPOSERV, ATIVO, CREATEDAT) VALUES (:nome,:ativo,NOW())");
+			$result->execute(array(
+				':nome'=> (string) $nome,
+				':ativo'=> (int) $ativo
+			));
+			
+			return 1;
+		}catch(PDOException $e){
+			return 'Error: '.$e->getMessage();
+		}
+	}
 
+	public function _n_perfil_colab(){
+		$retorno = array();
+		$retorno["0"] = "";
+		$sql = 	'SELECT ID_PERFIL, DESC_PERFIL FROM tb_perfil '.
+				'WHERE ATIVO = 1 AND (DELETADO = 0 OR DELETADO '.
+				'IS NULL) ORDER BY 2';
+				
+		foreach($this->con->query($sql) as $row){
+			$id 	= $row['ID_PERFIL'];
+			$desc = utf8_encode($row['DESC_PERFIL']);
+			$retorno["$id"]="$desc";
+		}
+		return $retorno;
+	}
+
+
+	};
 ?>

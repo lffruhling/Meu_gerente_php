@@ -41,7 +41,7 @@
                                                     	<label for="inputname" class="control-label">Nome *</label>
                                                         <div class="input-icon right">
                                                         	<i class="fa fa-user"></i>
-                                                            <input id="inputname" type="text" placeholder="" class="form-control" required/>
+                                                            <input id="inputname" type="text" placeholder="" class="form-control" required=""/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -262,7 +262,7 @@
 			var fone2 		= $('#inputfone2').val();
 			var celular		= $('#inputcel').val();
 			var email 		= $('#inputemail').val();
-			if ( $('#inputativo').val() == 'on'){
+			if ( $('#inputativo').is(":checked")){
 				var ativo		= '1';	
 			}else{
 				var ativo		= '0';	

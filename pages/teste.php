@@ -25,7 +25,8 @@
 	</script>
 </head>
 <body>
-	 <a href="http://example.com/" rel="superbox[iframe][700x500]">SuperBox</a>
+	 
+	 <IFRAME name=Criar Sites src="clientes_new.php" frameBorder=0 width=650 height=800 scrolling=auto></IFRAME>
 </body>
 </html>
 
