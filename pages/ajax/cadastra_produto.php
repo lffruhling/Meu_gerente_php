@@ -32,8 +32,8 @@ fclose($h);
 if($db->conecta()){
 
     $resultado = $db->insere_colab($nome,$id_perfil,$cpf,$dt_nasc,$cep,$rua,$nro,$bairro,$comp,$est,$cid,$fone,$cel,$email,$user,$pass,$ativo);
-	
-	echo "$resultado";
+
+    echo "$resultado";
 }
 
 $db->desconecta();

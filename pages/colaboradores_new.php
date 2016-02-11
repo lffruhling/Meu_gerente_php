@@ -54,18 +54,144 @@ $perfil = $db->_n_perfil_colab();
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4">
-                                                <div class="form-group">Perfil *
-                                                    <br>
-                                                    <select class="form-control" id="inputperfil" onchange="sel_perfil(0)" required="">
-                                                        <?php
-                                                        foreach($perfil as $key => $value){
-                                                            echo "<option value='$key'>$value</option>\n";
-                                                        }
-                                                        ?>
-                                                    </select>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">Perfil *
+                                                        <br>
+                                                            <select class="form-control" id="inputperfil" >
+                                                                <?php
+                                                                foreach($perfil as $key => $value){
+                                                                    echo "<option value='$key'>$value</option>\n";
+                                                                }
+                                                                ?>
+                                                            </select>
+                                                    </div>
                                                 </div>
-                                            </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label for="inputcpf" class="control-label">CPF</label>
+                                                        <div class="input-icon right">
+                                                            <i class="fa fa-user"></i>
+                                                            <input id="inputcpf" type="number" placeholder="" class="form-control"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label for="inputdtnasc" class="control-label">Data de Nascimento</label>
+                                                        <div class="input-icon right">
+                                                            <i class="fa fa-user"></i>
+                                                            <input id="inputdtnasc" type="date" placeholder="" class="form-control"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label for="inputcep" class="control-label">CEP</label>
+                                                        <div class="input-icon right">
+                                                            <i class="fa fa-user"></i>
+                                                            <input id="inputcep" type="number" placeholder="" class="form-control"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-6">
+                                                    <div class="form-group">
+                                                        <label for="inputend" class="control-label">Endereço</label>
+                                                        <div class="input-icon right">
+                                                            <i class="fa fa-user"></i>
+                                                            <input id="inputend" type="text" placeholder="" class="form-control"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label for="inputnro" class="control-label">Número</label>
+                                                        <div class="input-icon right">
+                                                            <i class="fa fa-user"></i>
+                                                            <input id="inputnro" type="text" placeholder="" class="form-control"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="form-group">
+                                                        <label for="inputbairro" class="control-label">Bairro</label>
+                                                        <div class="input-icon right">
+                                                            <i class="fa fa-user"></i>
+                                                            <input id="inputbairro" type="text" placeholder="" class="form-control"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <div class="form-group">
+                                                        <label for="inputcomp" class="control-label">Complemento</label>
+                                                        <div class="input-icon right">
+                                                            <i class="fa fa-user"></i>
+                                                            <input id="inputcomp" type="text" placeholder="" class="form-control"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="inputestado" class="control-label">Estado</label>
+                                                        <div class="input-icon right">
+                                                            <i class="fa fa-user"></i>
+                                                            <input id="inputestado" type="text" placeholder="" class="form-control"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label for="inputcid" class="control-label">Município</label>
+                                                        <div class="input-icon right">
+                                                            <i class="fa fa-user"></i>
+                                                            <input id="inputcid" type="text" placeholder="" class="form-control"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label for="inputfone" class="control-label">Telefone</label>
+                                                        <div class="input-icon right">
+                                                            <i class="fa fa-user"></i>
+                                                            <input id="inputfone" type="number" placeholder="" class="form-control"/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-3">
+                                                    <div class="form-group">
+                                                        <label for="inputcel" class="control-label">Celular *</label>
+                                                        <div class="input-icon right">
+                                                            <i class="fa fa-user"></i>
+                                                            <input id="inputcel" type="number" placeholder="" class="form-control" required=""/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="inputemail" class="control-label">E-Mail *</label>
+                                                        <div class="input-icon right">
+                                                            <i class="fa fa-user"></i>
+                                                            <input id="inputemail" type="text" placeholder="" class="form-control" required=""/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="inputuser" class="control-label">Usuário *</label>
+                                                        <div class="input-icon right">
+                                                            <i class="fa fa-user"></i>
+                                                            <input id="inputuser" type="text" placeholder="" class="form-control" required=""/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="inputpass" class="control-label">Senha *</label>
+                                                        <div class="input-icon right">
+                                                            <i class="fa fa-user"></i>
+                                                            <input id="inputpass" type="text" placeholder="" class="form-control" required=""/>
+                                                        </div>
+                                                    </div>
+                                                </div>
 											</div>
 											
                                         	<div class="form-group mbn">
@@ -151,6 +277,21 @@ $perfil = $db->_n_perfil_colab();
 	<script type="text/javascript">
 		function cadastrar_colab(){
 			var nome 		= $('#inputname').val();
+            var id_perfil	= $('#inputperfil').val();
+            var cpf         = $('#inputcpf').val();
+            var dt_nasc		= $('#inputdtnasc').val();
+            var cep 		= $('#inputcep').val();
+            var rua 		= $('#inputend').val();
+            var nro 		= $('#inputnro').val();
+            var bairro 		= $('#inputbairro').val();
+            var comp 		= $('#inputcomp').val();
+            var est 		= $('#inputestado').val();
+            var cid 		= $('#inputcid').val();
+            var fone 		= $('#inputfone').val();
+            var cel 		= $('#inputcel').val();
+            var email 		= $('#inputemail').val();
+            var user 		= $('#inputuser').val();
+            var pass 		= $('#inputpass').val();
 			if(nome==''){
 				alert("Preencha o campo Nome");
 				return;
@@ -163,7 +304,22 @@ $perfil = $db->_n_perfil_colab();
 			
 			var dadosajax = {
 				'nome': nome,
-				'ativo': ativo
+                'id_perfil': id_perfil,
+                'cpf': cpf,
+                'dt_nasc': dt_nasc,
+                'cep': cep,
+                'rua': rua,
+                'nro': nro,
+                'bairro': bairro,
+                'comp': comp,
+                'est': est,
+                'cid': cid,
+                'fone': fone,
+                'cel': cel,
+                'email': email,
+                'user': user,
+                'pass': pass,
+                'ativo': ativo
 			};
 			pageurl = './ajax/cadastra_colab.php';
 			//para consultar mais opcoes possiveis numa chamada ajax
@@ -188,6 +344,7 @@ $perfil = $db->_n_perfil_colab();
 					if(result=='1'){
 						alert('Colaborador adicionado com sucesso');
 						$('#inputname').val('');
+                        //$('#inputperfil').val(0);
 						$('#inputativo').val('');
 						
 						open("colaboradores_new.php","_self");
@@ -195,7 +352,7 @@ $perfil = $db->_n_perfil_colab();
 						
 					} else if(result=='0'){
 						alert('Erro ao adicionar Colaborador');
-					}
+					}else{alert(result)}
 				}
 			});
 		}

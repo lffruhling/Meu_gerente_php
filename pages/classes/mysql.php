@@ -125,15 +125,35 @@ class MySQL{
 		}
 	}
 	
-	public function insere_colab($nome,$ativo){
+	public function insere_colab($nome,$id_perfil,$cpf,$dt_nasc,$cep,$rua,$nro,$bairro,$comp,$est,$cid,$fone,$cel,$email,$user,$pass,$ativo){
 		try{
-			$result = $this->con->prepare(	" INSERT INTO tb_tpo_servico (DESC_TPOSERV, ATIVO, CREATEDAT) VALUES (:nome,:ativo,NOW())");
-			$result->execute(array(
+			$result = $this->con->prepare(	" INSERT INTO tb_colaboradores(ID_PERFIL, NOME_COLAB, CPF_COLAB, DATANASC_COLAB, CEP_COLAB,       ".
+                                            " RUA_COLAB, NRO_COLAB, BAIRRO_COLAB, COMPLEMENTO_COLAB, ESTADO_COLAB, CIDADE_COLAB, FONE1_COLAB, ".
+                                            " CEL1_COLAB, EMAIL_COLAB, USUARIO_COLAB, SENHA_COLAB, ATIVO, CREATEDAT) VALUES (:id_perfil,:nome,".
+                                            ":cpf,:dt_nasc,:cep,:rua,:nro,:bairro,:comp,:est,:cid,:fone,:cel,:email,:usu,:pass,:ativo,now())  ");
+
+            $result->execute(array(
 				':nome'=> (string) $nome,
+                ':id_perfil'=> (int) $id_perfil,
+                ':cpf'=> (int) $cpf,
+                ':dt_nasc'=>  $dt_nasc,
+                ':cep'=> (int) $cep,
+                ':rua'=> (string) $rua,
+                ':nro'=> (string) $nro,
+                ':bairro'=> (string) $bairro,
+                ':comp'=> (string) $comp,
+                ':est'=> (string) $est,
+                ':cid'=> (string) $cid,
+                ':fone'=> (int) $fone,
+                ':cel'=> (int) $cel,
+                ':email'=> (string) $email,
+                ':usu'=> (string) $user,
+                ':pass'=> (string) base64_encode($pass),
 				':ativo'=> (int) $ativo
 			));
-			
-			return 1;
+
+            return 1;
+
 		}catch(PDOException $e){
 			return 'Error: '.$e->getMessage();
 		}
@@ -142,7 +162,7 @@ class MySQL{
 	public function _n_perfil_colab(){
 		$retorno = array();
 		$retorno["0"] = "";
-		$sql = 	'SELECT ID_PERFIL, DESC_PERFIL FROM tb_perfil '.
+		$sql = 	'SELECT ID_PERFIL, DESC_PERFIL FROM tb_perfil  '.
 				'WHERE ATIVO = 1 AND (DELETADO = 0 OR DELETADO '.
 				'IS NULL) ORDER BY 2';
 				
@@ -154,6 +174,20 @@ class MySQL{
 		return $retorno;
 	}
 
+    public function _n_grupo_prod(){
+        $retorno = array();
+        $retorno["0"] = "";
+        $sql = 	'SELECT ID_GRUP, DESC_GRUP FROM tb_grupo_produto '.
+                'WHERE ATIVO = 1 AND (DELETADO = 0 OR DELETADO IS'.
+                ' NULL) ORDER BY 2';
+
+        foreach($this->con->query($sql) as $row){
+            $id 	= $row['ID_GRUP'];
+            $desc = utf8_encode($row['DESC_GRUP']);
+            $retorno["$id"]="$desc";
+        }
+        return $retorno;
+    }
 
 	};
 ?>
