@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Produtos</title>
+    <title>Ordens de Serviços</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -30,9 +30,62 @@ include "classes/mysql.php";
 $db = new MySQL();
 $db->conecta() or die("Erro de conexão ao banco");
 
-$grupo = $db->_n_grupo_prod();
+$cliente = $db->_n_cliente_os();
+$tipo_serviço = $db->_n_tipo_serv_os();
+$tecnico = $db->_n_tecnico_os();
 
 ?>
+<h1 style="margin-top:150px" align="center">Cadastro Wizard</h1>
+<form id="msform">
+    <ul id="progressbar">
+        <li class="active">Passo 1</li>
+        <li>Passo 2</li>
+        <li>Passo 3</li>
+    </ul>
+    <fieldset>
+        <h2 class="fs-title">Passo 1</h2>
+        <h3 class="fs_subtitle">texto</h3>
+        <div class="form-group">Cliente *
+            <br>
+            <select class="form-control" id="inputcli" >
+                <?php
+                foreach($cliente as $key => $value){
+                    echo "<option value='$key'>$value</option>\n";
+                }
+                ?>
+            </select>
+        </div>
+    </fieldset>
+    <fieldset>
+        <h2 class="fs-title">Passo 2</h2>
+        <h3 class="fs_subtitle">texto</h3>
+        <div class="form-group">dois *
+            <br>
+            <select class="form-control" id="inputcli" >
+                <?php
+                foreach($cliente as $key => $value){
+                    echo "<option value='$key'>$value</option>\n";
+                }
+                ?>
+            </select>
+        </div>
+    </fieldset>
+    <fieldset>
+        <h2 class="fs-title">Passo 3</h2>
+        <h3 class="fs_subtitle">texto</h3>
+        <div class="form-group">TrÊs *
+            <br>
+            <select class="form-control" id="inputcli" >
+                <?php
+                foreach($cliente as $key => $value){
+                    echo "<option value='$key'>$value</option>\n";
+                }
+                ?>
+            </select>
+        </div>
+    </fieldset>
+</form>
+
 <div class="page-content">
     <div id="tab-general">
         <div class="row mbl">
@@ -40,26 +93,17 @@ $grupo = $db->_n_grupo_prod();
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="panel panel-green">
-                            <div class="panel-heading">Novo Produto</div>
+                            <div class="panel-heading">Nova Ordem de Serviço</div>
                             <div class="panel-body pan">
                                 <form action="#">
                                     <div class="form-body pal">
                                         <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label for="inputname" class="control-label">Nome *</label>
-                                                    <div class="input-icon right">
-                                                        <i class="fa fa-user"></i>
-                                                        <input id="inputname" type="text" placeholder="" class="form-control" required=""/>
-                                                    </div>
-                                                </div>
-                                            </div>
                                             <div class="col-md-6">
-                                                <div class="form-group">Grupo do Produto *
+                                                <div class="form-group">Cliente *
                                                     <br>
-                                                    <select class="form-control" id="inputgrupo" >
+                                                    <select class="form-control" id="inputcli" >
                                                         <?php
-                                                        foreach($grupo as $key => $value){
+                                                        foreach($cliente as $key => $value){
                                                             echo "<option value='$key'>$value</option>\n";
                                                         }
                                                         ?>
@@ -67,61 +111,53 @@ $grupo = $db->_n_grupo_prod();
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="inputmarca" class="control-label">Marca</label>
-                                                    <div class="input-icon right">
-                                                        <i class="fa fa-user"></i>
-                                                        <input id="inputmarca" type="text" placeholder="" class="form-control"/>
-                                                    </div>
+                                                <div class="form-group">Tipo de Serviço *
+                                                    <br>
+                                                    <select class="form-control" id="input_tp_serv" >
+                                                        <?php
+                                                        foreach($tipo_serviço as $key => $value){
+                                                            echo "<option value='$key'>$value</option>\n";
+                                                        }
+                                                        ?>
+                                                    </select>
                                                 </div>
                                             </div>
                                             <div class="col-md-6">
-                                                <div class="form-group">
-                                                    <label for="inputmodelo" class="control-label">Modelo</label>
-                                                    <div class="input-icon right">
-                                                        <i class="fa fa-user"></i>
-                                                        <input id="inputmodelo" type="text" placeholder="" class="form-control"/>
-                                                    </div>
+                                                <div class="form-group">Técnico *
+                                                    <br>
+                                                    <select class="form-control" id="inputtec" >
+                                                        <?php
+                                                        foreach($tecnico as $key => $value){
+                                                            echo "<option value='$key'>$value</option>\n";
+                                                        }
+                                                        ?>
+                                                    </select>
                                                 </div>
                                             </div>
-                                            <div class="col-md-3">
+                                            <div class="col-md-4">
                                                 <div class="form-group">
-                                                    <label for="inputcompra" class="control-label">Valor de Compra</label>
+                                                    <label for="inputobs" class="control-label">Observações *</label>
                                                     <div class="input-icon right">
                                                         <i class="fa fa-user"></i>
-                                                        <input id="inputcompra" type="number" placeholder="" class="form-control"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="inputvenda" class="control-label">Valor de Venda</label>
-                                                    <div class="input-icon right">
-                                                        <i class="fa fa-user"></i>
-                                                        <input id="inputvenda" type="number" placeholder="" class="form-control"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-3">
-                                                <div class="form-group">
-                                                    <label for="inputquant" class="control-label">Quantidade</label>
-                                                    <div class="input-icon right">
-                                                        <i class="fa fa-user"></i>
-                                                        <input id="inputquant" type="number" placeholder="" class="form-control"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col-md-9">
-                                                <div class="form-group">
-                                                    <label for="inputdesc" class="control-label">Descrição</label>
-                                                    <div class="input-icon right">
-                                                        <i class="fa fa-user"></i>
-                                                        <textarea  id="inputdesc" type="text" placeholder="" class="form-control"> </textarea>
+                                                        <input id="inputobs" type="text" placeholder="" class="form-control" required=""/>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
-
+                                        <div class="form-group mbn">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input id="inputorcamento" tabindex="5" type="checkbox" checked/>&nbsp; Orçar Ordem de Serviço
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="form-group mbn">
+                                            <div class="checkbox">
+                                                <label>
+                                                    <input id="inputfoto" tabindex="5" type="checkbox" checked/>&nbsp; Fotografar Peças
+                                                </label>
+                                            </div>
+                                        </div>
                                         <div class="form-group mbn">
                                             <div class="checkbox">
                                                 <label>
@@ -133,7 +169,7 @@ $grupo = $db->_n_grupo_prod();
                                     <div class="form-actions text-right pal">
                                         <button type="button" class="btn btn-primary">
                                             Cancelar</button>
-                                        <button type="button" class="btn btn-primary" onclick="cadastrar_produto();">
+                                        <button type="button" class="btn btn-primary" onclick="cadastrar_os();">
                                             Salvar</button>
                                     </div>
                                 </form>
@@ -186,6 +222,11 @@ $grupo = $db->_n_grupo_prod();
 <script language="JavaScript" type="text/javascript" src="./js/sprinkle.js"></script>
 <script language="JavaScript" type="text/javascript" src="./js/glide.js"></script>
 <script src="script/main.js"></script>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
+<script src="http://thecodeplayer.com/uploads/js/jquery.easing.min.js" type="text/javascript"></script>
+<script src="js/jquery-multi-step-form.js" type="text/javascript"></script>
+<link href="js/jquery-multi-step-form.css" media="screen" rel="stylesheet" type="text/css"/>
+
 <script>        (function (i, s, o, g, r, a, m) {
         i['GoogleAnalyticsObject'] = r;
         i[r] = i[r] || function () {
@@ -203,38 +244,39 @@ $grupo = $db->_n_grupo_prod();
 
 </script>
 <script type="text/javascript">
-    function cadastrar_produto(){
-        var nome 		= $('#inputname').val();
-        var id_grupo	= $('#inputgrupo').val();
-        var marca       = $('#inputmarca').val();
-        var modelo      = $('#inputmodelo').val();
-        var desc        = $('#inputdesc').val();
-        var quant       = $('#inputquant').val();
-        var valorcomp   = $('#inputcompra').val();
-        var valorvend   = $('#inputvenda').val();
+    function cadastrar_os(){
+        var id_cli 		= $('#inputcli').val();
+        var id_tp_serv	= $('#input_tp_serv').val();
+        var id_tec      = $('#inputtec').val();
+        var obs		    = $('#inputobs').val();
 
-        if(nome==''){
-            alert("Preencha o campo Nome");
-            return;
-        }
-        if ( $('#inputativo').is(":checked")){
-            var ativo		= '1';
+        if ( $('#inputorcamento').is(":checked")){
+            var orcamento = '1';
         }else{
-            var ativo		= '0';
+            var orcamento = '0';
+        }
+        if ( $('#inputfoto').is(":checked")){
+            var foto = '1';
+        }else{
+            var foto = '0';
+        }
+
+        if ( $('#inputativo').is(":checked")){
+            var ativo = '1';
+        }else{
+            var ativo = '0';
         }
 
         var dadosajax = {
-            'nome': nome,
-            'id_grupo': id_grupo,
-            'marca': marca,
-            'modelo': modelo,
-            'desc': desc,
-            'quant': quant,
-            'valorcomp': valorcomp,
-            'valorvend': valorvend,
+            'id_cli': id_cli,
+            'id_tp_serv': id_tp_serv,
+            'id_tec': id_tec,
+            'obs': obs,
+            'foto': foto,
+            'orcamento': orcamento,
             'ativo': ativo
         };
-        pageurl = './ajax/cadastra_produto.php';
+        pageurl = './ajax/cadastra_os.php';
         //para consultar mais opcoes possiveis numa chamada ajax
         //http://api.jquery.com/jQuery.ajax/
         $.ajax({
@@ -255,12 +297,16 @@ $grupo = $db->_n_grupo_prod();
             success: function(result)
             {
                 if(result==1){
-                    alert('Produtos adicionado com sucesso');
-                    open("produtos_new.php","_self");
+                    alert('Ordem de Serviço adicionada com sucesso');
+
+                    //$('#inputperfil').val(0);
+                    $('#inputativo').val('');
+
+                    open("os_new.php","_self");
                     //$('#dynamictable').DataTable().ajax.reload(null,false).draw();
 
                 } else if(result==0){
-                    alert('Erro ao adicionar Produtos');
+                    alert('Erro ao adicionar Ordem de Serviço');
                 }
             }
         });
