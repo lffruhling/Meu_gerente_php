@@ -200,23 +200,23 @@
                                 </div>
                             </div>
 			                <div class="panel panel-green">
-                            <div class="panel-heading">Clientes Cadastrados</div>
-                            <div class="panel-body">
-								 <table id="dynamictable" class="table table-hover table-bordered">
-								    <thead>
-								    <tr>
-								        <th>Código</th>
-								        <th>Nome</th>
-								        <th>Enderço</th>
-								        <th>Telefone</th>
-								        <th>Celular</th>
-								        <th>E-Mail</th>
-								        <th>Status</th>
-								        <th>Ação</th>
-								    </tr>
-								    </thead>
-								</table>
-							</div>
+                                <div class="panel-heading">Clientes Cadastrados</div>
+                                <div class="panel-body">
+                                     <table id="dynamictable" class="table table-hover table-bordered">
+                                        <thead>
+                                        <tr>
+                                            <th>Código</th>
+                                            <th>Nome</th>
+                                            <th>Enderço</th>
+                                            <th>Telefone</th>
+                                            <th>Celular</th>
+                                            <th>E-Mail</th>
+                                            <th>Status</th>
+                                            <th>Ação</th>
+                                        </tr>
+                                        </thead>
+                                     </table>
+                                </div>
 							</div>
 							
 						</div>
