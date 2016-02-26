@@ -2,17 +2,33 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6f1b40ce-96de-45a6-a0bb-d2604409078f" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/ajax/adiciona_produto.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/ajax/cadastra_os.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/os_new.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/table/os_produto_table.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/ajax/sel_produto.php" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/teste_wizard.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/ajax/cadastra_produto.php" afterPath="$PROJECT_DIR$/pages/ajax/cadastra_produto.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/clientes_edit.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/colaboradores_edit.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/ajax/deleta_cliente.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/ajax/deleta_colab.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/ajax/edita_cliente.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/ajax/edita_colab.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/ajax/edita_grupo.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/ajax/edita_os.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/ajax/edita_perfil.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/ajax/edita_produto.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/ajax/edita_tipo_serv.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/grupo_prod_edit.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/os_edit.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/perfil_edit.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/produtos_edit.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/pages/tipo_serv_edit.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/ajax/cadastra_colab.php" afterPath="$PROJECT_DIR$/pages/ajax/cadastra_colab.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/ajax/cadastra_os.php" afterPath="$PROJECT_DIR$/pages/ajax/cadastra_os.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/ajax/cadastra_tipo_serv.php" afterPath="$PROJECT_DIR$/pages/ajax/cadastra_tipo_serv.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/clientes_list.php" afterPath="$PROJECT_DIR$/pages/clientes_list.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/clientes_new.php" afterPath="$PROJECT_DIR$/pages/clientes_new.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/table/clientes_table.php" afterPath="$PROJECT_DIR$/pages/table/clientes_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/colaboradores_new.php" afterPath="$PROJECT_DIR$/pages/colaboradores_new.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/classes/mysql.php" afterPath="$PROJECT_DIR$/pages/classes/mysql.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/produtos_new.php" afterPath="$PROJECT_DIR$/pages/produtos_new.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/teste.php" afterPath="$PROJECT_DIR$/pages/teste.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/os_new.php" afterPath="$PROJECT_DIR$/pages/os_new.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/pages/table/os_produto_table.php" afterPath="$PROJECT_DIR$/pages/table/os_produto_table.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="Meu_gerente_php.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -37,59 +53,237 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="os_new.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/os_new.php">
+      <file leaf-file-name="mysql.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/pages/classes/mysql.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="9180">
-              <caret line="74" column="20" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="os_produto_table.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/table/os_produto_table.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="2482">
-              <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
+            <state vertical-scroll-proportion="0.28219485" vertical-offset="3318" max-vertical-offset="9894">
+              <caret line="1202" column="114" selection-start-line="1202" selection-start-column="114" selection-end-line="1202" selection-end-column="114" />
               <folding>
-                <marker date="1455679885738" expanded="true" signature="3023:3368" placeholder="..." />
-                <marker date="1455679885738" expanded="true" signature="3080:3144" placeholder="..." />
-                <marker date="1455679885738" expanded="true" signature="3199:3258" placeholder="..." />
-                <marker date="1455679885738" expanded="true" signature="3300:3360" placeholder="..." />
-                <marker date="1455679885738" expanded="true" signature="3404:4442" placeholder="..." />
-                <marker date="1455679885738" expanded="true" signature="3435:4434" placeholder="..." />
-                <marker date="1455679885738" expanded="true" signature="3541:3621" placeholder="..." />
-                <marker date="1455679885738" expanded="true" signature="3737:4425" placeholder="..." />
-                <marker date="1455679885738" expanded="true" signature="3746:3967" placeholder="..." />
-                <marker date="1455679885738" expanded="true" signature="3846:3957" placeholder="..." />
-                <marker date="1455679885738" expanded="true" signature="3872:3947" placeholder="..." />
-                <marker date="1455679885738" expanded="true" signature="3977:4202" placeholder="..." />
-                <marker date="1455679885738" expanded="true" signature="4076:4192" placeholder="..." />
-                <marker date="1455679885738" expanded="true" signature="4103:4182" placeholder="..." />
-                <marker date="1455679885738" expanded="true" signature="4212:4416" placeholder="..." />
-                <marker date="1455679885738" expanded="true" signature="4300:4406" placeholder="..." />
-                <marker date="1455679885738" expanded="true" signature="4325:4396" placeholder="..." />
+                <element signature="n#conecta#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#desconecta#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#valida_login#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#insere_cliente#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_nome_cli#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_cnpj_cli#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_cpf_cli#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_cep_cli#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_rua_cli#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_nro_cli#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_comp_cli#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_estado_cli#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_cidade_cli#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_fone1_cli#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_fone2_cli#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_celular_cli#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_email_cli#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_ativo_cli#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#edita_cliente#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#deleta_cliente#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#insere_perfil#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_nome_perf#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_ativo_perf#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#edita_perfil#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#deleta_perfil#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#insere_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_n_perfil_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_nome_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_perfil_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_cpf_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_dt_nasc_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_cep_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_rua_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_nro_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_bairro_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_comp_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_estado_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_cid_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_fone1_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_cel_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_email_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_usuario_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_senha_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_ativo_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#edita_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#deleta_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#insere_grupo#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_nome_grupo#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_ativo_grupo#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#edita_grupo#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#deleta_grupo#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#insere_produto#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_n_grupo_prod#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_grupo_prod#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_nome_prod#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_marca_prod#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_modelo_prod#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_valor_compra_prod#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_valor_venda_prod#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_quantidade_prod#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_desc_prod#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_ativo_prod#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#edita_produto#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#deleta_produto#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#insere_tipo_serv#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_nome_tipo_serv#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#_e_ativo_tipo_serv#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#edita_tipo_serv#0;n#MySQL#0;n#!!top" expanded="false" />
+                <element signature="n#deleta_tipo_serv#0;n#MySQL#0;n#!!top" expanded="false" />
+                <marker date="1456494881861" expanded="true" signature="902:1035" placeholder="SELECT USUAR..tb_colaboradores..." />
+                <marker date="1456494881861" expanded="true" signature="1523:1836" placeholder="INSERT INTO ..." />
+                <marker date="1456494881861" expanded="true" signature="2457:2508" placeholder="SELECT NOME_..tb_cliente..." />
+                <marker date="1456494881861" expanded="true" signature="2865:2916" placeholder="SELECT CNPJ_..tb_cliente..." />
+                <marker date="1456494881861" expanded="true" signature="3253:3303" placeholder="SELECT CPF_C..tb_cliente..." />
+                <marker date="1456494881861" expanded="true" signature="3640:3690" placeholder="SELECT CEP_C..tb_cliente..." />
+                <marker date="1456494881861" expanded="true" signature="4038:4088" placeholder="SELECT RUA_C..tb_cliente..." />
+                <marker date="1456494881861" expanded="true" signature="4443:4493" placeholder="SELECT NRO_C..tb_cliente..." />
+                <marker date="1456494881861" expanded="true" signature="4841:4899" placeholder="SELECT COMPL..tb_cliente..." />
+                <marker date="1456494881861" expanded="true" signature="5239:5292" placeholder="SELECT ESTAD..tb_cliente..." />
+                <marker date="1456494881861" expanded="true" signature="5632:5685" placeholder="SELECT CIDAD..tb_cliente..." />
+                <marker date="1456494881861" expanded="true" signature="6024:6076" placeholder="SELECT FONE1..tb_cliente..." />
+                <marker date="1456494881861" expanded="true" signature="6415:6467" placeholder="SELECT FONE2..tb_cliente..." />
+                <marker date="1456494881861" expanded="true" signature="6808:6862" placeholder="SELECT CELUL..tb_cliente..." />
+                <marker date="1456494881861" expanded="true" signature="7201:7253" placeholder="SELECT EMAIL..tb_cliente..." />
+                <marker date="1456494881861" expanded="true" signature="7592:7640" placeholder="SELECT ATIVO..tb_cliente..." />
+                <marker date="1456494881861" expanded="true" signature="8173:9023" placeholder="UPDATE tb_cl..." />
+                <marker date="1456494881861" expanded="true" signature="9926:10086" placeholder="UPDATE tb_cl..." />
+                <marker date="1456494881861" expanded="true" signature="10434:10514" placeholder="INSERT INTO ..." />
+                <marker date="1456494881861" expanded="true" signature="10780:10833" placeholder="SELECT DESC_..tb_perfil..." />
+                <marker date="1456494881861" expanded="true" signature="11173:11220" placeholder="SELECT ATIVO..tb_perfil..." />
+                <marker date="1456494881861" expanded="true" signature="11667:11871" placeholder="UPDATE tb_pe..." />
+                <marker date="1456494881861" expanded="true" signature="12270:12376" placeholder="UPDATE tb_pe..." />
+                <marker date="1456494881861" expanded="true" signature="12843:13288" placeholder="INSERT INTO ..." />
+                <marker date="1456494881861" expanded="true" signature="14291:14434" placeholder="SELECT ID_PE..tb_perfil..." />
+                <marker date="1456494881861" expanded="true" signature="14740:14798" placeholder="SELECT NOME_..tb_colaboradores..." />
+                <marker date="1456494881861" expanded="true" signature="15170:15227" placeholder="SELECT ID_PE..tb_colaboradores..." />
+                <marker date="1456494881861" expanded="true" signature="15448:15492" placeholder="SELECT ID_PE..tb_perfil..." />
+                <marker date="1456494881861" expanded="true" signature="16018:16075" placeholder="SELECT CPF_C..tb_colaboradores..." />
+                <marker date="1456494881861" expanded="true" signature="16418:16480" placeholder="SELECT DATAN..tb_colaboradores..." />
+                <marker date="1456494881861" expanded="true" signature="16819:16876" placeholder="SELECT CEP_C..tb_colaboradores..." />
+                <marker date="1456494881861" expanded="true" signature="17215:17272" placeholder="SELECT RUA_C..tb_colaboradores..." />
+                <marker date="1456494881861" expanded="true" signature="17611:17668" placeholder="SELECT NRO_C..tb_colaboradores..." />
+                <marker date="1456494881861" expanded="true" signature="18010:18070" placeholder="SELECT BAIRR..tb_colaboradores..." />
+                <marker date="1456494881861" expanded="true" signature="18410:18475" placeholder="SELECT COMPL..tb_colaboradores..." />
+                <marker date="1456494881861" expanded="true" signature="18817:18877" placeholder="SELECT ESTAD..tb_colaboradores..." />
+                <marker date="1456494881861" expanded="true" signature="19216:19276" placeholder="SELECT CIDAD..tb_colaboradores..." />
+                <marker date="1456494881861" expanded="true" signature="19617:19676" placeholder="SELECT FONE1..tb_colaboradores..." />
+                <marker date="1456494881861" expanded="true" signature="20015:20073" placeholder="SELECT CEL1_..tb_colaboradores..." />
+                <marker date="1456494881861" expanded="true" signature="20414:20473" placeholder="SELECT EMAIL..tb_colaboradores..." />
+                <marker date="1456494881861" expanded="true" signature="20816:20877" placeholder="SELECT USUAR..tb_colaboradores..." />
+                <marker date="1456494881861" expanded="true" signature="21218:21277" placeholder="SELECT SENHA..tb_colaboradores..." />
+                <marker date="1456494881861" expanded="true" signature="21633:21686" placeholder="SELECT ATIVO..tb_colaboradores..." />
+                <marker date="1456494881861" expanded="true" signature="22311:23831" placeholder="UPDATE tb_co..." />
+                <marker date="1456494881861" expanded="true" signature="24863:24975" placeholder="UPDATE tb_co..." />
+                <marker date="1456494881861" expanded="true" signature="25333:25419" placeholder="INSERT INTO ..." />
+                <marker date="1456494881861" expanded="true" signature="25686:25742" placeholder="SELECT DESC_..tb_grupo_produto..." />
+                <marker date="1456494881861" expanded="true" signature="26083:26135" placeholder="SELECT ATIVO..tb_grupo_produto..." />
+                <marker date="1456494881861" expanded="true" signature="26581:26788" placeholder="UPDATE tb_gr..." />
+                <marker date="1456494881861" expanded="true" signature="27186:27297" placeholder="UPDATE tb_gr..." />
+                <marker date="1456494881861" expanded="true" signature="27726:28119" placeholder="INSERT INTO ..." />
+                <marker date="1456494881861" expanded="true" signature="28820:28965" placeholder="SELECT ID_GR..tb_grupo_produto..." />
+                <marker date="1456494881861" expanded="true" signature="29297:29346" placeholder="SELECT ID_GR..tb_produtos..." />
+                <marker date="1456494881861" expanded="true" signature="29567:29614" placeholder="SELECT ID_GR..tb_grupo_produto..." />
+                <marker date="1456494881861" expanded="true" signature="30162:30213" placeholder="SELECT NOME_..tb_produtos..." />
+                <marker date="1456494881861" expanded="true" signature="30553:30605" placeholder="SELECT MARCA..tb_produtos..." />
+                <marker date="1456494881861" expanded="true" signature="30946:30999" placeholder="SELECT MODEL..tb_produtos..." />
+                <marker date="1456494881861" expanded="true" signature="31346:31405" placeholder="SELECT VALOR..tb_produtos..." />
+                <marker date="1456494881861" expanded="true" signature="31751:31809" placeholder="SELECT VALOR..tb_produtos..." />
+                <marker date="1456494881861" expanded="true" signature="32154:32211" placeholder="SELECT QUANT..tb_produtos..." />
+                <marker date="1456494881861" expanded="true" signature="32550:32601" placeholder="SELECT DESC_..tb_produtos..." />
+                <marker date="1456494881861" expanded="true" signature="32941:32988" placeholder="SELECT ATIVO..tb_produtos..." />
+                <marker date="1456494881861" expanded="true" signature="33496:34428" placeholder="UPDATE tb_pr..." />
+                <marker date="1456494881861" expanded="true" signature="35165:35271" placeholder="UPDATE tb_pr..." />
+                <marker date="1456494881861" expanded="true" signature="35652:35739" placeholder="INSERT INTO ..." />
+                <marker date="1456494881861" expanded="true" signature="36082:36142" placeholder="SELECT DESC_..tb_tpo_servico..." />
+                <marker date="1456494881861" expanded="true" signature="36487:36540" placeholder="SELECT ATIVO..tb_tpo_servico..." />
+                <marker date="1456494881861" expanded="true" signature="36990:37201" placeholder="UPDATE tb_tp..." />
+                <marker date="1456494881861" expanded="true" signature="37603:37715" placeholder="UPDATE tb_tp..." />
+                <marker date="1456494881861" expanded="true" signature="38146:38447" placeholder="INSERT INTO ..." />
+                <marker date="1456494881861" expanded="true" signature="38146:38503" placeholder="INSERT INTO ..." />
+                <marker date="1456494881861" expanded="true" signature="39234:39295" placeholder="UPDATE tb_pr..." />
+                <marker date="1456494881861" expanded="true" signature="39800:40036" placeholder="INSERT INTO ..." />
+                <marker date="1456494881861" expanded="true" signature="40544:40697" placeholder="SELECT ID_CL..tb_cliente..." />
+                <marker date="1456494881861" expanded="true" signature="41056:41222" placeholder="SELECT ID_TP..tb_tpo_servico..." />
+                <marker date="1456494881861" expanded="true" signature="41597:41754" placeholder="SELECT ID_CO..tb_colaboradores..." />
+                <marker date="1456494881861" expanded="true" signature="42126:42271" placeholder="SELECT ID_GR..tb_grupo_produto..." />
+                <marker date="1456494881861" expanded="true" signature="42618:42759" placeholder="SELECT ID_PR..tb_produtos..." />
+                <marker date="1456494881861" expanded="true" signature="43091:43131" placeholder="SELECT ID_CL..tb_os..." />
+                <marker date="1456494881861" expanded="true" signature="43352:43391" placeholder="SELECT ID_CL..tb_cliente..." />
+                <marker date="1456494881861" expanded="true" signature="43972:44016" placeholder="SELECT ID_TP..tb_os..." />
+                <marker date="1456494881861" expanded="true" signature="44237:44288" placeholder="SELECT ID_TP..tb_tpo_servico..." />
+                <marker date="1456494881861" expanded="true" signature="44867:44909" placeholder="SELECT ID_CO..tb_os..." />
+                <marker date="1456494881861" expanded="true" signature="45130:45179" placeholder="SELECT ID_CO..tb_colaboradores..." />
+                <marker date="1456494881861" expanded="true" signature="45724:45764" placeholder="SELECT OBS_O..tb_os..." />
+                <marker date="1456494881861" expanded="true" signature="46101:46144" placeholder="SELECT ORCAM..tb_os..." />
+                <marker date="1456494881861" expanded="true" signature="46559:46597" placeholder="SELECT FOTO ..tb_os..." />
+                <marker date="1456494881861" expanded="true" signature="47013:47058" placeholder="SELECT ATIVA..tb_os..." />
+                <marker date="1456494881861" expanded="true" signature="47474:47513" placeholder="SELECT ATIVO..tb_os..." />
+                <marker date="1456494881861" expanded="true" signature="47927:47966" placeholder="SELECT ID_JS..tb_os..." />
+                <marker date="1456494881861" expanded="true" signature="48382:48398" placeholder="UPDATE tb_os..." />
+                <marker date="1456494881861" expanded="true" signature="48382:49074" placeholder="UPDATE tb_os..." />
+                <marker date="1456494881861" expanded="true" signature="48382:49143" placeholder="UPDATE tb_os..." />
+                <marker date="1456494881861" expanded="true" signature="48382:49148" placeholder="UPDATE tb_os..." />
+                <marker date="1456494881861" expanded="true" signature="48457:49074" placeholder="INSERT INTO ..." />
+                <marker date="1456494881861" expanded="true" signature="49868:49966" placeholder="UPDATE tb_os..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="utils.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/pages/utils/utils.php">
+      <file leaf-file-name="os_edit.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/os_edit.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="1244" max-vertical-offset="2856">
-              <caret line="86" column="12" selection-start-line="86" selection-start-column="12" selection-end-line="86" selection-end-column="12" />
+            <state vertical-scroll-proportion="-9.481482" vertical-offset="5897" max-vertical-offset="9979">
+              <caret line="377" column="12" selection-start-line="377" selection-start-column="12" selection-end-line="377" selection-end-column="27" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="teste.php" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/pages/teste.php">
+      <file leaf-file-name="os_new.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/os_new.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2094065" vertical-offset="0" max-vertical-offset="893">
-              <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+            <state vertical-scroll-proportion="-24.076923" vertical-offset="4984" max-vertical-offset="9197">
+              <caret line="330" column="27" selection-start-line="330" selection-start-column="27" selection-end-line="330" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cadastra_tipo_serv.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/ajax/cadastra_tipo_serv.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="391">
+              <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edita_tipo_serv.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/ajax/edita_tipo_serv.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="408">
+              <caret line="12" column="54" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="cadastra_os.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/ajax/cadastra_os.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="544">
+              <caret line="18" column="96" selection-start-line="18" selection-start-column="96" selection-end-line="18" selection-end-column="96" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="edita_os.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/pages/ajax/edita_os.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="561">
+              <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -108,22 +302,41 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/pages/ajax/cadastra_colab.php" />
-        <option value="$PROJECT_DIR$/pages/colaboradores_new.php" />
         <option value="$PROJECT_DIR$/pages/ajax/cadastra_produto.php" />
         <option value="$PROJECT_DIR$/pages/produtos_new.php" />
         <option value="$PROJECT_DIR$/pages/teste_wizard.php" />
         <option value="$PROJECT_DIR$/pages/ajax/sel_produto.php" />
         <option value="$PROJECT_DIR$/pages/wizard.html" />
         <option value="$PROJECT_DIR$/pages/ajax/adiciona_produto.php" />
-        <option value="$PROJECT_DIR$/pages/ajax/cadastra_os.php" />
-        <option value="$PROJECT_DIR$/pages/classes/mysql.php" />
-        <option value="$PROJECT_DIR$/pages/clientes_list.php" />
         <option value="$PROJECT_DIR$/pages/wizard.php" />
         <option value="$PROJECT_DIR$/pages/os_new_.php" />
-        <option value="$PROJECT_DIR$/pages/table/os_produto_table.php" />
-        <option value="$PROJECT_DIR$/pages/os_new.php" />
         <option value="$PROJECT_DIR$/pages/teste.php" />
+        <option value="$PROJECT_DIR$/pages/table/os_produto_table.php" />
+        <option value="$PROJECT_DIR$/pages/ajax/edita_cliente.php" />
+        <option value="$PROJECT_DIR$/pages/table/clientes_table.php" />
+        <option value="$PROJECT_DIR$/pages/ajax/deleta_cliente.php" />
+        <option value="$PROJECT_DIR$/pages/clientes_new.php" />
+        <option value="$PROJECT_DIR$/pages/clientes_list.php" />
+        <option value="$PROJECT_DIR$/pages/clientes_edit.php" />
+        <option value="$PROJECT_DIR$/pages/ajax/edita_colab.php" />
+        <option value="$PROJECT_DIR$/pages/ajax/cadastra_colab.php" />
+        <option value="$PROJECT_DIR$/pages/ajax/deleta_colab.php" />
+        <option value="$PROJECT_DIR$/pages/colaboradores_edit.php" />
+        <option value="$PROJECT_DIR$/pages/colaboradores_new.php" />
+        <option value="$PROJECT_DIR$/pages/ajax/edita_perfil.php" />
+        <option value="$PROJECT_DIR$/pages/perfil_edit.php" />
+        <option value="$PROJECT_DIR$/pages/produtos_edit.php" />
+        <option value="$PROJECT_DIR$/pages/ajax/edita_produto.php" />
+        <option value="$PROJECT_DIR$/pages/ajax/edita_grupo.php" />
+        <option value="$PROJECT_DIR$/pages/grupo_prod_edit.php" />
+        <option value="$PROJECT_DIR$/pages/ajax/cadastra_tipo_serv.php" />
+        <option value="$PROJECT_DIR$/pages/tipo_serv_edit.php" />
+        <option value="$PROJECT_DIR$/pages/ajax/edita_tipo_serv.php" />
+        <option value="$PROJECT_DIR$/pages/os_edit.php" />
+        <option value="$PROJECT_DIR$/pages/ajax/edita_os.php" />
+        <option value="$PROJECT_DIR$/pages/os_new.php" />
+        <option value="$PROJECT_DIR$/pages/ajax/cadastra_os.php" />
+        <option value="$PROJECT_DIR$/pages/classes/mysql.php" />
       </list>
     </option>
   </component>
@@ -160,6 +373,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -192,14 +406,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Meu_gerente_php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="Meu_gerente_php" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pages" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="ajax" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="FullScreen" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -291,161 +523,11 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <option name="time" value="4" />
+      <option name="time" value="8" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/pages/os_new.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="9180">
-          <caret line="74" column="20" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/table/os_produto_table.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="2482">
-          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
-          <folding>
-            <marker date="1455679885738" expanded="true" signature="3023:3368" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="3080:3144" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="3199:3258" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="3300:3360" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="3404:4442" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="3435:4434" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="3541:3621" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="3737:4425" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="3746:3967" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="3846:3957" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="3872:3947" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="3977:4202" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="4076:4192" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="4103:4182" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="4212:4416" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="4300:4406" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="4325:4396" placeholder="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/utils/utils.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1244" max-vertical-offset="2856">
-          <caret line="86" column="12" selection-start-line="86" selection-start-column="12" selection-end-line="86" selection-end-column="12" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/teste.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="578">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/colaboradores_new.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4513" max-vertical-offset="6239">
-          <caret line="277" column="35" selection-start-line="0" selection-start-column="0" selection-end-line="361" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/os_new.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="5601" max-vertical-offset="6154">
-          <caret line="344" column="31" selection-start-line="344" selection-start-column="31" selection-end-line="344" selection-end-column="31" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/ajax/sel_produto.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="425">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/classes/mysql.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2119" max-vertical-offset="2720">
-          <caret line="359" column="8" selection-start-line="359" selection-start-column="8" selection-end-line="359" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/colaboradores_new.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4513" max-vertical-offset="6239">
-          <caret line="277" column="35" selection-start-line="0" selection-start-column="0" selection-end-line="361" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/os_new.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="2847" max-vertical-offset="4522">
-          <caret line="210" column="22" selection-start-line="210" selection-start-column="22" selection-end-line="210" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/ajax/cadastra_os.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="510">
-          <caret line="16" column="63" selection-start-line="16" selection-start-column="63" selection-end-line="16" selection-end-column="63" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/classes/mysql.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2210">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/Forms.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6057" max-vertical-offset="13515">
-          <caret line="381" column="55" selection-start-line="381" selection-start-column="55" selection-end-line="381" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/colaboradores_new.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="4513" max-vertical-offset="6239">
-          <caret line="298" column="31" selection-start-line="298" selection-start-column="21" selection-end-line="298" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/produtos_new.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="3266" max-vertical-offset="4692">
-          <caret line="204" column="31" selection-start-line="204" selection-start-column="31" selection-end-line="204" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/ajax/cadastra_produto.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="544">
-          <caret line="16" column="0" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/classes/mysql.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="960" max-vertical-offset="2006">
-          <caret line="174" column="32" selection-start-line="174" selection-start-column="32" selection-end-line="174" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/Forms.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="6057" max-vertical-offset="13515">
-          <caret line="381" column="55" selection-start-line="381" selection-start-column="55" selection-end-line="381" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/clientes_new.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="5814">
@@ -530,41 +612,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/ajax/cadastra_grupo.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="919">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/clientes_new.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.4635854" vertical-offset="5074" max-vertical-offset="5814">
-          <caret line="237" column="8" selection-start-line="237" selection-start-column="8" selection-end-line="332" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/ajax/cadastra_produto.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="544">
-          <caret line="6" column="29" selection-start-line="0" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/ajax/cadastra_colab.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.46363637" vertical-offset="0" max-vertical-offset="880">
-          <caret line="24" column="21" selection-start-line="24" selection-start-column="21" selection-end-line="24" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/produtos_new.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.6864502" vertical-offset="3773" max-vertical-offset="4692">
-          <caret line="258" column="38" selection-start-line="258" selection-start-column="38" selection-end-line="258" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/teste_wizard.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.15722543" vertical-offset="0" max-vertical-offset="5474">
@@ -579,6 +626,48 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/pages/teste.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="578">
+          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/utils/utils.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-43.692307" vertical-offset="326" max-vertical-offset="2856">
+          <caret line="86" column="12" selection-start-line="86" selection-start-column="12" selection-end-line="86" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/table/os_produto_table.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-11.769231" vertical-offset="204" max-vertical-offset="2482">
+          <caret line="30" column="12" selection-start-line="30" selection-start-column="12" selection-end-line="30" selection-end-column="12" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/ajax/adiciona_produto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.65384614" vertical-offset="0" max-vertical-offset="425">
+          <caret line="1" column="0" selection-start-line="1" selection-start-column="0" selection-end-line="1" selection-end-column="31" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/clientes_list.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-41.03846" vertical-offset="3795" max-vertical-offset="5134">
+          <caret line="286" column="22" selection-start-line="286" selection-start-column="22" selection-end-line="286" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/clientes_new.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.762598" vertical-offset="4844" max-vertical-offset="5814">
+          <caret line="325" column="41" selection-start-line="325" selection-start-column="41" selection-end-line="325" selection-end-column="41" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/pages/ajax/cadastra_cliente.php">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="714">
@@ -586,95 +675,404 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/colaboradores_new.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-11.461538" vertical-offset="4513" max-vertical-offset="6239">
-          <caret line="283" column="24" selection-start-line="283" selection-start-column="24" selection-end-line="283" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/pages/clientes_list.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.59814817" vertical-offset="1581" max-vertical-offset="4318">
-          <caret line="112" column="43" selection-start-line="112" selection-start-column="43" selection-end-line="112" selection-end-column="43" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/pages/table/clientes_table.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.73666096" vertical-offset="1952" max-vertical-offset="2533">
-          <caret line="140" column="2" selection-start-line="53" selection-start-column="0" selection-end-line="140" selection-end-column="2" />
+        <state vertical-scroll-proportion="0.0" vertical-offset="1071" max-vertical-offset="2533">
+          <caret line="89" column="39" selection-start-line="89" selection-start-column="39" selection-end-line="89" selection-end-column="39" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/ajax/cadastra_os.php">
+    <entry file="file://$PROJECT_DIR$/pages/perfil_new.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.49741825" vertical-offset="0" max-vertical-offset="581">
-          <caret line="17" column="37" selection-start-line="17" selection-start-column="37" selection-end-line="17" selection-end-column="37" />
+        <state vertical-scroll-proportion="-13.076923" vertical-offset="0" max-vertical-offset="3179">
+          <caret line="20" column="20" selection-start-line="0" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/ajax/adiciona_produto.php">
+    <entry file="file://$PROJECT_DIR$/pages/produtos_new.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.26333907" vertical-offset="0" max-vertical-offset="581">
-          <caret line="9" column="36" selection-start-line="9" selection-start-column="36" selection-end-line="9" selection-end-column="36" />
+        <state vertical-scroll-proportion="-17.692308" vertical-offset="3773" max-vertical-offset="4692">
+          <caret line="249" column="42" selection-start-line="0" selection-start-column="0" selection-end-line="270" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/classes/mysql.php">
+    <entry file="file://$PROJECT_DIR$/pages/tipo_serv_new.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.757315" vertical-offset="1719" max-vertical-offset="4318">
-          <caret line="284" column="0" selection-start-line="284" selection-start-column="0" selection-end-line="284" selection-end-column="0" />
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="3179">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/table/os_produto_table.php">
+    <entry file="file://$PROJECT_DIR$/pages/grupo_prod_new.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="2482">
-          <caret line="27" column="19" selection-start-line="27" selection-start-column="19" selection-end-line="27" selection-end-column="19" />
-          <folding>
-            <marker date="1455679885738" expanded="true" signature="3023:3368" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="3080:3144" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="3199:3258" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="3300:3360" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="3404:4442" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="3435:4434" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="3541:3621" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="3737:4425" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="3746:3967" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="3846:3957" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="3872:3947" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="3977:4202" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="4076:4192" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="4103:4182" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="4212:4416" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="4300:4406" placeholder="..." />
-            <marker date="1455679885738" expanded="true" signature="4325:4396" placeholder="..." />
-          </folding>
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="3179">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="181" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/ajax/cadastra_colab.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-18.961538" vertical-offset="0" max-vertical-offset="748">
+          <caret line="29" column="0" selection-start-line="29" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/ajax/edita_cliente.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.11422172" vertical-offset="0" max-vertical-offset="893">
+          <caret line="6" column="14" selection-start-line="6" selection-start-column="14" selection-end-line="6" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/ajax/deleta_cliente.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.461538" vertical-offset="0" max-vertical-offset="374">
+          <caret line="16" column="2" selection-start-line="16" selection-start-column="2" selection-end-line="16" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/ajax/deleta_colab.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-6.5384617" vertical-offset="0" max-vertical-offset="374">
+          <caret line="10" column="34" selection-start-line="10" selection-start-column="34" selection-end-line="10" selection-end-column="34" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/clientes_edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-28.115385" vertical-offset="4386" max-vertical-offset="6324">
+          <caret line="301" column="37" selection-start-line="301" selection-start-column="12" selection-end-line="301" selection-end-column="37" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/colaboradores_new.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.37225434" vertical-offset="5067" max-vertical-offset="6494">
+          <caret line="317" column="13" selection-start-line="317" selection-start-column="13" selection-end-line="317" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/ajax/cadastra_perfil.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-0.0" vertical-offset="0" max-vertical-offset="391">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="17" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/ajax/edita_colab.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-3.9230769" vertical-offset="0" max-vertical-offset="680">
+          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/colaboradores_edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-26.153847" vertical-offset="5202" max-vertical-offset="6987">
+          <caret line="346" column="9" selection-start-line="343" selection-start-column="8" selection-end-line="346" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/ajax/edita_perfil.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="408">
+          <caret line="12" column="35" selection-start-line="12" selection-start-column="35" selection-end-line="12" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/perfil_edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-29.5" vertical-offset="1596" max-vertical-offset="3417">
+          <caret line="139" column="9" selection-start-line="139" selection-start-column="9" selection-end-line="139" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/ajax/cadastra_produto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="544">
+          <caret line="12" column="30" selection-start-line="12" selection-start-column="30" selection-end-line="12" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/ajax/edita_produto.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-12.423077" vertical-offset="0" max-vertical-offset="561">
+          <caret line="19" column="114" selection-start-line="19" selection-start-column="114" selection-end-line="19" selection-end-column="114" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/produtos_edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-32.03846" vertical-offset="4029" max-vertical-offset="5100">
+          <caret line="286" column="41" selection-start-line="286" selection-start-column="41" selection-end-line="286" selection-end-column="41" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/ajax/cadastra_grupo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-8.5" vertical-offset="0" max-vertical-offset="391">
+          <caret line="13" column="22" selection-start-line="0" selection-start-column="0" selection-end-line="17" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/ajax/edita_grupo.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="408">
+          <caret line="11" column="0" selection-start-line="11" selection-start-column="0" selection-end-line="11" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/ajax/cadastra_tipo_serv.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="391">
+          <caret line="11" column="39" selection-start-line="11" selection-start-column="39" selection-end-line="11" selection-end-column="39" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/grupo_prod_edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-10.153846" vertical-offset="2354" max-vertical-offset="3417">
+          <caret line="154" column="12" selection-start-line="154" selection-start-column="12" selection-end-line="154" selection-end-column="35" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/tipo_serv_edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-25.846153" vertical-offset="2524" max-vertical-offset="3417">
+          <caret line="188" column="38" selection-start-line="188" selection-start-column="38" selection-end-line="188" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/ajax/edita_tipo_serv.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.8461537" vertical-offset="0" max-vertical-offset="408">
+          <caret line="12" column="54" selection-start-line="12" selection-start-column="54" selection-end-line="12" selection-end-column="54" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/os_edit.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-9.481482" vertical-offset="5897" max-vertical-offset="9979">
+          <caret line="377" column="12" selection-start-line="377" selection-start-column="12" selection-end-line="377" selection-end-column="27" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/pages/os_new.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="969" max-vertical-offset="9180">
-          <caret line="74" column="20" selection-start-line="74" selection-start-column="20" selection-end-line="74" selection-end-column="20" />
+        <state vertical-scroll-proportion="-24.076923" vertical-offset="4984" max-vertical-offset="9197">
+          <caret line="330" column="27" selection-start-line="330" selection-start-column="27" selection-end-line="330" selection-end-column="27" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/utils/utils.php">
+    <entry file="file://$PROJECT_DIR$/pages/ajax/edita_os.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="1244" max-vertical-offset="2856">
-          <caret line="86" column="12" selection-start-line="86" selection-start-column="12" selection-end-line="86" selection-end-column="12" />
+        <state vertical-scroll-proportion="-9.153846" vertical-offset="0" max-vertical-offset="561">
+          <caret line="14" column="0" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/pages/teste.php">
+    <entry file="file://$PROJECT_DIR$/pages/ajax/cadastra_os.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2094065" vertical-offset="0" max-vertical-offset="893">
-          <caret line="11" column="21" selection-start-line="11" selection-start-column="21" selection-end-line="11" selection-end-column="21" />
+        <state vertical-scroll-proportion="-11.769231" vertical-offset="0" max-vertical-offset="544">
+          <caret line="18" column="96" selection-start-line="18" selection-start-column="96" selection-end-line="18" selection-end-column="96" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/pages/classes/mysql.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.28219485" vertical-offset="3318" max-vertical-offset="9894">
+          <caret line="1202" column="114" selection-start-line="1202" selection-start-column="114" selection-end-line="1202" selection-end-column="114" />
+          <folding>
+            <element signature="n#conecta#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#desconecta#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#valida_login#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#insere_cliente#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_nome_cli#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_cnpj_cli#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_cpf_cli#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_cep_cli#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_rua_cli#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_nro_cli#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_comp_cli#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_estado_cli#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_cidade_cli#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_fone1_cli#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_fone2_cli#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_celular_cli#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_email_cli#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_ativo_cli#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#edita_cliente#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#deleta_cliente#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#insere_perfil#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_nome_perf#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_ativo_perf#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#edita_perfil#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#deleta_perfil#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#insere_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_n_perfil_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_nome_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_perfil_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_cpf_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_dt_nasc_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_cep_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_rua_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_nro_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_bairro_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_comp_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_estado_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_cid_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_fone1_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_cel_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_email_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_usuario_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_senha_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_ativo_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#edita_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#deleta_colab#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#insere_grupo#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_nome_grupo#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_ativo_grupo#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#edita_grupo#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#deleta_grupo#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#insere_produto#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_n_grupo_prod#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_grupo_prod#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_nome_prod#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_marca_prod#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_modelo_prod#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_valor_compra_prod#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_valor_venda_prod#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_quantidade_prod#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_desc_prod#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_ativo_prod#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#edita_produto#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#deleta_produto#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#insere_tipo_serv#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_nome_tipo_serv#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#_e_ativo_tipo_serv#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#edita_tipo_serv#0;n#MySQL#0;n#!!top" expanded="false" />
+            <element signature="n#deleta_tipo_serv#0;n#MySQL#0;n#!!top" expanded="false" />
+            <marker date="1456494881861" expanded="true" signature="902:1035" placeholder="SELECT USUAR..tb_colaboradores..." />
+            <marker date="1456494881861" expanded="true" signature="1523:1836" placeholder="INSERT INTO ..." />
+            <marker date="1456494881861" expanded="true" signature="2457:2508" placeholder="SELECT NOME_..tb_cliente..." />
+            <marker date="1456494881861" expanded="true" signature="2865:2916" placeholder="SELECT CNPJ_..tb_cliente..." />
+            <marker date="1456494881861" expanded="true" signature="3253:3303" placeholder="SELECT CPF_C..tb_cliente..." />
+            <marker date="1456494881861" expanded="true" signature="3640:3690" placeholder="SELECT CEP_C..tb_cliente..." />
+            <marker date="1456494881861" expanded="true" signature="4038:4088" placeholder="SELECT RUA_C..tb_cliente..." />
+            <marker date="1456494881861" expanded="true" signature="4443:4493" placeholder="SELECT NRO_C..tb_cliente..." />
+            <marker date="1456494881861" expanded="true" signature="4841:4899" placeholder="SELECT COMPL..tb_cliente..." />
+            <marker date="1456494881861" expanded="true" signature="5239:5292" placeholder="SELECT ESTAD..tb_cliente..." />
+            <marker date="1456494881861" expanded="true" signature="5632:5685" placeholder="SELECT CIDAD..tb_cliente..." />
+            <marker date="1456494881861" expanded="true" signature="6024:6076" placeholder="SELECT FONE1..tb_cliente..." />
+            <marker date="1456494881861" expanded="true" signature="6415:6467" placeholder="SELECT FONE2..tb_cliente..." />
+            <marker date="1456494881861" expanded="true" signature="6808:6862" placeholder="SELECT CELUL..tb_cliente..." />
+            <marker date="1456494881861" expanded="true" signature="7201:7253" placeholder="SELECT EMAIL..tb_cliente..." />
+            <marker date="1456494881861" expanded="true" signature="7592:7640" placeholder="SELECT ATIVO..tb_cliente..." />
+            <marker date="1456494881861" expanded="true" signature="8173:9023" placeholder="UPDATE tb_cl..." />
+            <marker date="1456494881861" expanded="true" signature="9926:10086" placeholder="UPDATE tb_cl..." />
+            <marker date="1456494881861" expanded="true" signature="10434:10514" placeholder="INSERT INTO ..." />
+            <marker date="1456494881861" expanded="true" signature="10780:10833" placeholder="SELECT DESC_..tb_perfil..." />
+            <marker date="1456494881861" expanded="true" signature="11173:11220" placeholder="SELECT ATIVO..tb_perfil..." />
+            <marker date="1456494881861" expanded="true" signature="11667:11871" placeholder="UPDATE tb_pe..." />
+            <marker date="1456494881861" expanded="true" signature="12270:12376" placeholder="UPDATE tb_pe..." />
+            <marker date="1456494881861" expanded="true" signature="12843:13288" placeholder="INSERT INTO ..." />
+            <marker date="1456494881861" expanded="true" signature="14291:14434" placeholder="SELECT ID_PE..tb_perfil..." />
+            <marker date="1456494881861" expanded="true" signature="14740:14798" placeholder="SELECT NOME_..tb_colaboradores..." />
+            <marker date="1456494881861" expanded="true" signature="15170:15227" placeholder="SELECT ID_PE..tb_colaboradores..." />
+            <marker date="1456494881861" expanded="true" signature="15448:15492" placeholder="SELECT ID_PE..tb_perfil..." />
+            <marker date="1456494881861" expanded="true" signature="16018:16075" placeholder="SELECT CPF_C..tb_colaboradores..." />
+            <marker date="1456494881861" expanded="true" signature="16418:16480" placeholder="SELECT DATAN..tb_colaboradores..." />
+            <marker date="1456494881861" expanded="true" signature="16819:16876" placeholder="SELECT CEP_C..tb_colaboradores..." />
+            <marker date="1456494881861" expanded="true" signature="17215:17272" placeholder="SELECT RUA_C..tb_colaboradores..." />
+            <marker date="1456494881861" expanded="true" signature="17611:17668" placeholder="SELECT NRO_C..tb_colaboradores..." />
+            <marker date="1456494881861" expanded="true" signature="18010:18070" placeholder="SELECT BAIRR..tb_colaboradores..." />
+            <marker date="1456494881861" expanded="true" signature="18410:18475" placeholder="SELECT COMPL..tb_colaboradores..." />
+            <marker date="1456494881861" expanded="true" signature="18817:18877" placeholder="SELECT ESTAD..tb_colaboradores..." />
+            <marker date="1456494881861" expanded="true" signature="19216:19276" placeholder="SELECT CIDAD..tb_colaboradores..." />
+            <marker date="1456494881861" expanded="true" signature="19617:19676" placeholder="SELECT FONE1..tb_colaboradores..." />
+            <marker date="1456494881861" expanded="true" signature="20015:20073" placeholder="SELECT CEL1_..tb_colaboradores..." />
+            <marker date="1456494881861" expanded="true" signature="20414:20473" placeholder="SELECT EMAIL..tb_colaboradores..." />
+            <marker date="1456494881861" expanded="true" signature="20816:20877" placeholder="SELECT USUAR..tb_colaboradores..." />
+            <marker date="1456494881861" expanded="true" signature="21218:21277" placeholder="SELECT SENHA..tb_colaboradores..." />
+            <marker date="1456494881861" expanded="true" signature="21633:21686" placeholder="SELECT ATIVO..tb_colaboradores..." />
+            <marker date="1456494881861" expanded="true" signature="22311:23831" placeholder="UPDATE tb_co..." />
+            <marker date="1456494881861" expanded="true" signature="24863:24975" placeholder="UPDATE tb_co..." />
+            <marker date="1456494881861" expanded="true" signature="25333:25419" placeholder="INSERT INTO ..." />
+            <marker date="1456494881861" expanded="true" signature="25686:25742" placeholder="SELECT DESC_..tb_grupo_produto..." />
+            <marker date="1456494881861" expanded="true" signature="26083:26135" placeholder="SELECT ATIVO..tb_grupo_produto..." />
+            <marker date="1456494881861" expanded="true" signature="26581:26788" placeholder="UPDATE tb_gr..." />
+            <marker date="1456494881861" expanded="true" signature="27186:27297" placeholder="UPDATE tb_gr..." />
+            <marker date="1456494881861" expanded="true" signature="27726:28119" placeholder="INSERT INTO ..." />
+            <marker date="1456494881861" expanded="true" signature="28820:28965" placeholder="SELECT ID_GR..tb_grupo_produto..." />
+            <marker date="1456494881861" expanded="true" signature="29297:29346" placeholder="SELECT ID_GR..tb_produtos..." />
+            <marker date="1456494881861" expanded="true" signature="29567:29614" placeholder="SELECT ID_GR..tb_grupo_produto..." />
+            <marker date="1456494881861" expanded="true" signature="30162:30213" placeholder="SELECT NOME_..tb_produtos..." />
+            <marker date="1456494881861" expanded="true" signature="30553:30605" placeholder="SELECT MARCA..tb_produtos..." />
+            <marker date="1456494881861" expanded="true" signature="30946:30999" placeholder="SELECT MODEL..tb_produtos..." />
+            <marker date="1456494881861" expanded="true" signature="31346:31405" placeholder="SELECT VALOR..tb_produtos..." />
+            <marker date="1456494881861" expanded="true" signature="31751:31809" placeholder="SELECT VALOR..tb_produtos..." />
+            <marker date="1456494881861" expanded="true" signature="32154:32211" placeholder="SELECT QUANT..tb_produtos..." />
+            <marker date="1456494881861" expanded="true" signature="32550:32601" placeholder="SELECT DESC_..tb_produtos..." />
+            <marker date="1456494881861" expanded="true" signature="32941:32988" placeholder="SELECT ATIVO..tb_produtos..." />
+            <marker date="1456494881861" expanded="true" signature="33496:34428" placeholder="UPDATE tb_pr..." />
+            <marker date="1456494881861" expanded="true" signature="35165:35271" placeholder="UPDATE tb_pr..." />
+            <marker date="1456494881861" expanded="true" signature="35652:35739" placeholder="INSERT INTO ..." />
+            <marker date="1456494881861" expanded="true" signature="36082:36142" placeholder="SELECT DESC_..tb_tpo_servico..." />
+            <marker date="1456494881861" expanded="true" signature="36487:36540" placeholder="SELECT ATIVO..tb_tpo_servico..." />
+            <marker date="1456494881861" expanded="true" signature="36990:37201" placeholder="UPDATE tb_tp..." />
+            <marker date="1456494881861" expanded="true" signature="37603:37715" placeholder="UPDATE tb_tp..." />
+            <marker date="1456494881861" expanded="true" signature="38146:38447" placeholder="INSERT INTO ..." />
+            <marker date="1456494881861" expanded="true" signature="38146:38503" placeholder="INSERT INTO ..." />
+            <marker date="1456494881861" expanded="true" signature="39234:39295" placeholder="UPDATE tb_pr..." />
+            <marker date="1456494881861" expanded="true" signature="39800:40036" placeholder="INSERT INTO ..." />
+            <marker date="1456494881861" expanded="true" signature="40544:40697" placeholder="SELECT ID_CL..tb_cliente..." />
+            <marker date="1456494881861" expanded="true" signature="41056:41222" placeholder="SELECT ID_TP..tb_tpo_servico..." />
+            <marker date="1456494881861" expanded="true" signature="41597:41754" placeholder="SELECT ID_CO..tb_colaboradores..." />
+            <marker date="1456494881861" expanded="true" signature="42126:42271" placeholder="SELECT ID_GR..tb_grupo_produto..." />
+            <marker date="1456494881861" expanded="true" signature="42618:42759" placeholder="SELECT ID_PR..tb_produtos..." />
+            <marker date="1456494881861" expanded="true" signature="43091:43131" placeholder="SELECT ID_CL..tb_os..." />
+            <marker date="1456494881861" expanded="true" signature="43352:43391" placeholder="SELECT ID_CL..tb_cliente..." />
+            <marker date="1456494881861" expanded="true" signature="43972:44016" placeholder="SELECT ID_TP..tb_os..." />
+            <marker date="1456494881861" expanded="true" signature="44237:44288" placeholder="SELECT ID_TP..tb_tpo_servico..." />
+            <marker date="1456494881861" expanded="true" signature="44867:44909" placeholder="SELECT ID_CO..tb_os..." />
+            <marker date="1456494881861" expanded="true" signature="45130:45179" placeholder="SELECT ID_CO..tb_colaboradores..." />
+            <marker date="1456494881861" expanded="true" signature="45724:45764" placeholder="SELECT OBS_O..tb_os..." />
+            <marker date="1456494881861" expanded="true" signature="46101:46144" placeholder="SELECT ORCAM..tb_os..." />
+            <marker date="1456494881861" expanded="true" signature="46559:46597" placeholder="SELECT FOTO ..tb_os..." />
+            <marker date="1456494881861" expanded="true" signature="47013:47058" placeholder="SELECT ATIVA..tb_os..." />
+            <marker date="1456494881861" expanded="true" signature="47474:47513" placeholder="SELECT ATIVO..tb_os..." />
+            <marker date="1456494881861" expanded="true" signature="47927:47966" placeholder="SELECT ID_JS..tb_os..." />
+            <marker date="1456494881861" expanded="true" signature="48382:48398" placeholder="UPDATE tb_os..." />
+            <marker date="1456494881861" expanded="true" signature="48382:49074" placeholder="UPDATE tb_os..." />
+            <marker date="1456494881861" expanded="true" signature="48382:49143" placeholder="UPDATE tb_os..." />
+            <marker date="1456494881861" expanded="true" signature="48382:49148" placeholder="UPDATE tb_os..." />
+            <marker date="1456494881861" expanded="true" signature="48457:49074" placeholder="INSERT INTO ..." />
+            <marker date="1456494881861" expanded="true" signature="49868:49966" placeholder="UPDATE tb_os..." />
+          </folding>
         </state>
       </provider>
     </entry>

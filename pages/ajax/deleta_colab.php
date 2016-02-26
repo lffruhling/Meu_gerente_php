@@ -4,14 +4,13 @@ include "../utils/utils.php";
 
 $db = new MySQL();
 
-$nome			= $_POST['nome'];
-$ativo 			= $_POST['ativo'];
+$id			    = $_POST['id'];
 
 if($db->conecta()){
 
-	$resultado = $db->insere_tipo_serv($nome,$ativo);
-	
-	echo "$resultado";
+    $resultado = $db->deleta_colab($id);
+
+    echo "$resultado";
 }
 
 $db->desconecta();

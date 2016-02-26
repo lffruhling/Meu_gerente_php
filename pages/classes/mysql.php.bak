@@ -1195,12 +1195,11 @@ class MySQL{
      *
     */
 
-    public function insere_os($idg,$id_cli,$id_tp_serv,$id_tec,$orcamento,$obs,$foto,$email,$ativo){
+    public function insere_os($idg,$id_cli,$id_tp_serv,$id_tec,$orcamento,$obs,$foto,$ativo){
         try{
-            $result = $this->con->prepare(	" INSERT INTO tb_os (ID_CLI, ID_TPOSERV, ID_COLAB, ID_JS, OBS_OS,     ".
-                                            " ORCAMENTO, FOTO, ATIVA_EMAIL, ATIVO, CREATEDAT) VALUES (:id_cli,    ".
-                                            " :id_tp_serv, :id_tec, :idg, :obs, :orcamento, :foto,:email, :ativo, ".
-                                            " now())                                                              ");
+            $result = $this->con->prepare(	" INSERT INTO tb_os (ID_CLI, ID_TPOSERV, ID_COLAB, ID_JS, OBS_OS,   ".
+                                            " ORCAMENTO, FOTO, ATIVO, CREATEDAT) VALUES (:id_cli, :id_tp_serv,  ".
+                                            " :id_tec, :idg, :obs, :orcamento, :foto, :ativo, now())            ");
 
             $result->execute(array(
                 ':idg'=> (string) $idg,
@@ -1208,8 +1207,7 @@ class MySQL{
                 ':id_tp_serv'=> (int) $id_tp_serv,
                 ':id_tec'=> (int) $id_tec,
                 ':orcamento'=> (int) $orcamento,
-                ':foto'=> (int) $foto,
-                ':email'=> (int) $email,
+                'foto'=> (int) $foto,
                 ':obs'=> (string) $obs,
                 ':ativo'=> (int) $ativo
             ));
@@ -1512,7 +1510,7 @@ class MySQL{
         return $resultado;
     }
 
-    public function edita_os($id_cli,$id_tp_serv,$id_tec,$orcamento,$obs,$foto,$email,$ativo,$id){
+    public function edita_os($id_cli,$id_tp_serv,$id_tec,$orcamento,$obs,$foto,$ativo,$id){
         try{
             $result = $this->con->prepare(	" UPDATE tb_os SET          ".
                                             " ID_CLI = :id_cli,         ".
@@ -1521,20 +1519,18 @@ class MySQL{
                                             " OBS_OS = :obs,            ".
                                             " ORCAMENTO = :orcamento,   ".
                                             " FOTO = :foto,             ".
-                                            " ATIVA_EMAIL = :email,     ".
                                             " ATIVO = :ativo,           ".
                                             " UPDATEDAT = now()         ".
-                                            " WHERE ID_OS= :id          ");
+                                            " WHERE ID_OS = :id          ");
 
             $result->execute(array(
-               	':id'=> (int) $id,
+                ':id'=> (int) $id,
                 ':id_cli'=> (int) $id_cli,
                 ':id_tp_serv'=> (int) $id_tp_serv,
                 ':id_tec'=> (int) $id_tec,
                 ':obs'=> (string) $obs,
                 ':orcamento'=> (int) $orcamento,
                 ':foto'=> (int) $foto,
-                ':email'=> (int) $email,
                 ':ativo'=> (int) $ativo
             ));
 

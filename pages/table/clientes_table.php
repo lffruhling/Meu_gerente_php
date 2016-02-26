@@ -68,15 +68,15 @@ while ($retorno=mysqli_fetch_array ( $result )){
 	$branco = ' ';	
 
     $acao = "<div class='hidden-sm hidden-xs action-buttons'>
-		<a class='blue' onclick='abre_frame_visualizar($id);'>
+		<!--<a class='blue' onclick='abre_frame_visualizar($id);'>
 			<i class='ace-icon fa fa-search-plus bigger-130'></i>
-		</a>
+		</a>-->
 
-		<a class='green' onclick='abre_frame_editar($id);'>
+		<a class='green' onclick='editar($id);'>
 			<i class='ace-icon fa fa-pencil bigger-130'></i>
 		</a>
 
-		<a class='red' onclick='apagar($id);'>
+		<a class='red' onclick='deletar($id);'>
 			<i class='ace-icon fa fa-trash-o bigger-130'></i>
 		</a>
 	</div>
@@ -88,16 +88,16 @@ while ($retorno=mysqli_fetch_array ( $result )){
 			</button>
 
 			<ul class='dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close'>
-				<li>
+				<!--<li>
 					<a onclick='abre_frame_visualizar($id);' class='tooltip-info' data-rel='tooltip' title='View'>
 						<span class='blue'>
 							<i class='ace-icon fa fa-search-plus bigger-120'></i>
 						</span>
 					</a>
-				</li>
+				</li>-->
 
 				<li>
-					<a onclick='abre_frame_editar($id);' class='tooltip-success' data-rel='tooltip' title='Edit'>
+					<a onclick='editar($id);' class='tooltip-success' data-rel='tooltip' title='Edit'>
 						<span class='green'>
 							<i class='ace-icon fa fa-pencil-square-o bigger-120'></i>
 						</span>
@@ -105,7 +105,7 @@ while ($retorno=mysqli_fetch_array ( $result )){
 				</li>
 
 				<li>
-					<a onclick='apagar($id);' class='tooltip-error' data-rel='tooltip' title='Delete'>
+					<a onclick='deletar($id);' class='tooltip-error' data-rel='tooltip' title='Delete'>
 						<span class='red'>
 							<i class='ace-icon fa fa-trash-o bigger-120'></i>
 						</span>

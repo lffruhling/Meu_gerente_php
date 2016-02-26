@@ -25,7 +25,7 @@ if(!$ret){
     die('Erro na seleção do database');
 }
 
-$idg= $_GET['idg'];
+$idg= $_REQUEST['idg'];
 //$idg= '7fffffff';
 
 $query = " SELECT ID_PROD_US, gp.DESC_GRUP, prod.NOME_PROD, QUANTIDADE_PROD_US,            ".
