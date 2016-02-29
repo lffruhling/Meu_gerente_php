@@ -9,49 +9,51 @@ if(!$conn){
     die('Erro na conexão');
 }
 
+
 $ret = mysqli_select_db($conn,$dbtable);
 $requestData= $_REQUEST;
 
 $columns = array(
-    0 => 'CODIGO',
-    1 => 'GRUPO',
-    2 => 'PRODUTO',
-    3 => 'QUANTIDADE',
-    4 => 'VALOR',
-    5 =>  ' ',
+    0 => 'ID',
+    1 => 'NOME',
+    2 => 'GRUPO',
+    3 => 'ATIVO',
+    4 => 'ACAO',
 );
 
 if(!$ret){
     die('Erro na seleção do database');
 }
 
-$idg= $_REQUEST['idg'];
-//$idg= '7fffffff';
+$query =" SELECT                                                        ".
+        "     prod.ID_PROD, gp.DESC_GRUP, prod.NOME_PROD, prod.ATIVO    ".
+        " FROM                                                          ".
+        "     tb_produtos prod                                          ".
+        " LEFT JOIN                                                     ".
+        "     tb_grupo_produto gp ON gp.ID_GRUP = prod.ID_GRUP          ".
+        " WHERE                                                         ".
+        "     (prod.DELETADO = 0                                        ".
+        "         OR prod.DELETADO IS NULL)                             ";
 
-$query = " SELECT ID_PROD_US, gp.DESC_GRUP, prod.NOME_PROD, QUANTIDADE_PROD_US,            ".
-         "  prod.VALOR_VENDA_PROD*QUANTIDADE_PROD_US VALOR FROM tb_produtos_usados prod_us ".
-         " LEFT JOIN tb_grupo_produto gp on                                                ".
-         " prod_us.ID_GRUP = gp.ID_GRUP                                                    ".
-         " LEFT JOIN tb_produtos prod on                                                   ".
-         " prod_us.ID_PROD = prod.ID_PROD                                                  ".
-         " WHERE ID_JS='$idg' AND (prod_us.DELETADO = 0 OR prod_us.DELETADO IS NULL)       ";
 $result = mysqli_query($conn,$query);
 $totalData = mysqli_num_rows($result);
 $totalFiltered = $totalData;
 
-$query =    " SELECT ID_PROD_US, gp.DESC_GRUP, prod.NOME_PROD, QUANTIDADE_PROD_US,            ".
-            "  prod.VALOR_VENDA_PROD*QUANTIDADE_PROD_US VALOR FROM tb_produtos_usados prod_us ".
-            " LEFT JOIN tb_grupo_produto gp on                                                ".
-            " prod_us.ID_GRUP = gp.ID_GRUP                                                    ".
-            " LEFT JOIN tb_produtos prod on                                                   ".
-            " prod_us.ID_PROD = prod.ID_PROD                                                  ".
-            " WHERE ID_JS='$idg' AND (prod_us.DELETADO = 0 OR prod_us.DELETADO IS NULL)       ";
+$query =    " SELECT                                                        ".
+            "     prod.ID_PROD, gp.DESC_GRUP, prod.NOME_PROD, prod.ATIVO    ".
+            " FROM                                                          ".
+            "     tb_produtos prod                                          ".
+            " LEFT JOIN                                                     ".
+            "     tb_grupo_produto gp ON gp.ID_GRUP = prod.ID_GRUP          ".
+            " WHERE                                                         ".
+            "     (prod.DELETADO = 0                                        ".
+            "         OR prod.DELETADO IS NULL)                             ";
 
 if( !empty($requestData['search']['value']) ) {
-    $query.=" AND (ID_PROD_US LIKE '%".$requestData['search']['value']."%' ";
-    $query.=" OR gp.DESC_GRUP LIKE '%".$requestData['search']['value']."%'";
-    $query.=" OR prod.NOME_PROD LIKE '%".$requestData['search']['value']."%'";
-    $query.=" OR QUANTIDADE_PROD_US LIKE '%".$requestData['search']['value']."%' )";
+
+    $query.=" AND (prod.ID_PROD LIKE '%".$requestData['search']['value']."%' ";
+    $query.=" OR gp.DESC_GRUP LIKE '%".$requestData['search']['value']."%' ";
+    $query.=" OR prod.NOME_PROD LIKE '%".$requestData['search']['value']."%' )";
 }
 
 $result = mysqli_query($conn,$query) or die ("Erro na query: $query\n");
@@ -62,23 +64,26 @@ $result = mysqli_query($conn,$query) or die ("Erro na query: $query\n");
 
 
 while ($retorno=mysqli_fetch_array ( $result )){
-    $id		 = $retorno['ID_PROD_US'];
+    $id		= $retorno['ID_PROD'];
     $grupo   = utf8_encode($retorno['DESC_GRUP']);
-    $produto = utf8_encode($retorno['NOME_PROD']);
-    $quantidade  = $retorno['QUANTIDADE_PROD_US'];
-    $valor = $retorno['VALOR'];
-    $branco = ' ';
+    $nome   = utf8_encode($retorno['NOME_PROD']);
+    $ativo  = $retorno['ATIVO'];
+    if ($ativo=='0'){
+        $ativo='Inativo';
+    }else{
+        $ativo='Ativo';
+    }
 
     $acao = "<div class='hidden-sm hidden-xs action-buttons'>
-		<a class='blue' onclick='abre_frame_visualizar($id);'>
+		<!--<a class='blue' onclick='abre_frame_visualizar($id);'>
 			<i class='ace-icon fa fa-search-plus bigger-130'></i>
-		</a>
+		</a>-->
 
-		<a class='green' onclick='abre_frame_editar($id);'>
+		<a class='green' onclick='editar($id);'>
 			<i class='ace-icon fa fa-pencil bigger-130'></i>
 		</a>
 
-		<a class='red' onclick='apagar($id);'>
+		<a class='red' onclick='deletar($id);'>
 			<i class='ace-icon fa fa-trash-o bigger-130'></i>
 		</a>
 	</div>
@@ -90,16 +95,16 @@ while ($retorno=mysqli_fetch_array ( $result )){
 			</button>
 
 			<ul class='dropdown-menu dropdown-only-icon dropdown-yellow dropdown-menu-right dropdown-caret dropdown-close'>
-				<li>
+				<!--<li>
 					<a onclick='abre_frame_visualizar($id);' class='tooltip-info' data-rel='tooltip' title='View'>
 						<span class='blue'>
 							<i class='ace-icon fa fa-search-plus bigger-120'></i>
 						</span>
 					</a>
-				</li>
+				</li>-->
 
 				<li>
-					<a onclick='abre_frame_editar($id);' class='tooltip-success' data-rel='tooltip' title='Edit'>
+					<a onclick='editar($id);' class='tooltip-success' data-rel='tooltip' title='Edit'>
 						<span class='green'>
 							<i class='ace-icon fa fa-pencil-square-o bigger-120'></i>
 						</span>
@@ -107,7 +112,7 @@ while ($retorno=mysqli_fetch_array ( $result )){
 				</li>
 
 				<li>
-					<a onclick='apagar($id);' class='tooltip-error' data-rel='tooltip' title='Delete'>
+					<a onclick='deletar($id);' class='tooltip-error' data-rel='tooltip' title='Delete'>
 						<span class='red'>
 							<i class='ace-icon fa fa-trash-o bigger-120'></i>
 						</span>
@@ -120,11 +125,10 @@ while ($retorno=mysqli_fetch_array ( $result )){
     $nestedData=array();
 
     $nestedData[] = $id;
+    $nestedData[] = $nome;
     $nestedData[] = $grupo;
-    $nestedData[] = $produto;
-    $nestedData[] = $quantidade;
-    $nestedData[] = $valor;
-    $nestedData[] = $branco;
+    $nestedData[] = $ativo;
+    $nestedData[] = $acao;
     $data[] = $nestedData;
 
 }
@@ -139,3 +143,5 @@ $dados = array(
 echo json_encode($dados);
 
 ?>
+
+

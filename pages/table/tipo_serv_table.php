@@ -6,42 +6,45 @@ error_reporting( E_ALL );
 
 $conn = mysqli_connect($dbhost,$dbuser,$dbpass);
 if(!$conn){
-	die('Erro na conexão');
+    die('Erro na conexão');
 }
 
 
 $ret = mysqli_select_db($conn,$dbtable);
 $requestData= $_REQUEST;
 
-$columns = array( 
-		0 => 'ID', 
-		1 => 'NOME',
-		2 => 'END',
-		3 => 'FONE',
-        4 => 'CEL',
-        5 => 'EMAIL',
-		6 => 'STATUS',
-		7 => 'ACAO',
-	);
+$columns = array(
+    0 => 'ID',
+    1 => 'NOME',
+    2 => 'ATIVO',
+    3 => 'ACAO',
+);
 
 if(!$ret){
-	die('Erro na seleção do database');
+    die('Erro na seleção do database');
 }
 
-$query = "SELECT ID_CLI, NOME_CLI, RUA_CLI, FONE1_CLI, CELULAR_CLI, EMAIL_CLI, ATIVO FROM tb_cliente WHERE (DELETADO = 0 OR DELETADO IS NULL)";
+$query ="  SELECT                                   ".
+        "      ID_TPOSERV, DESC_TPOSERV, ATIVO      ".
+        "  FROM                                     ".
+        "      tb_tpo_servico                       ".
+        "  WHERE                                    ".
+        "      (DELETADO = 0 OR DELETADO IS NULL)   ";
+
 $result = mysqli_query($conn,$query);
 $totalData = mysqli_num_rows($result);
 $totalFiltered = $totalData;
 
-$query = "SELECT ID_CLI, NOME_CLI, RUA_CLI, FONE1_CLI, CELULAR_CLI, EMAIL_CLI, ATIVO FROM tb_cliente WHERE (DELETADO = 0 OR DELETADO IS NULL)";
+$query =    "  SELECT                                   ".
+            "      ID_TPOSERV, DESC_TPOSERV, ATIVO      ".
+            "  FROM                                     ".
+            "      tb_tpo_servico                       ".
+            "  WHERE                                    ".
+            "      (DELETADO = 0 OR DELETADO IS NULL)   ";
 
-if( !empty($requestData['search']['value']) ) {   
-    $query.=" AND (ID_CLI LIKE '%".$requestData['search']['value']."%' ";
-    $query.=" OR NOME_CLI LIKE '%".$requestData['search']['value']."%'";
-	$query.=" OR RUA_CLI LIKE '%".$requestData['search']['value']."%'";
-	$query.=" OR FONE1_CLI LIKE '%".$requestData['search']['value']."%'";
-	$query.=" OR CELULAR_CLI LIKE '%".$requestData['search']['value']."%'";
-	$query.=" OR EMAIL_CLI LIKE '%".$requestData['search']['value']."%' )";
+if( !empty($requestData['search']['value']) ) {
+    $query.=" AND (ID_TPOSERV LIKE '%".$requestData['search']['value']."%' ";
+    $query.=" OR DESC_TPOSERV LIKE '%".$requestData['search']['value']."%' )";
 }
 
 $result = mysqli_query($conn,$query) or die ("Erro na query: $query\n");
@@ -49,23 +52,17 @@ $totalFiltered = mysqli_num_rows($result);
 $query.= " ORDER BY ". isset($columns[$requestData['order'][0]['column']])." ".$requestData['order'][0]['dir']." LIMIT ".$requestData['start']." ,".$requestData['length']." ";
 
 $result = mysqli_query($conn,$query) or die ("Erro na query: $query\n");
-        
+
 
 while ($retorno=mysqli_fetch_array ( $result )){
-    $id		= $retorno['ID_CLI'];
-	$nome   = utf8_encode($retorno['NOME_CLI']);
-    $rua	= utf8_encode($retorno['RUA_CLI']);
-    $fone	= utf8_encode($retorno['FONE1_CLI']);
-    $cel	= utf8_encode($retorno['CELULAR_CLI']);
-    $email  = utf8_encode($retorno['EMAIL_CLI']);
-	$ativo  = $retorno['ATIVO'];
-	if ($ativo=='0'){
-		$ativo='Inativo';
-	}else{
-		$ativo='Ativo';
-	}
-	
-	$branco = ' ';	
+    $id		= $retorno['ID_TPOSERV'];
+    $nome   = utf8_encode($retorno['DESC_TPOSERV']);
+    $ativo  = $retorno['ATIVO'];
+    if ($ativo=='0'){
+        $ativo='Inativo';
+    }else{
+        $ativo='Ativo';
+    }
 
     $acao = "<div class='hidden-sm hidden-xs action-buttons'>
 		<!--<a class='blue' onclick='abre_frame_visualizar($id);'>
@@ -114,29 +111,25 @@ while ($retorno=mysqli_fetch_array ( $result )){
 			</ul>
 		</div>
 	</div>";
-    
-    $nestedData=array(); 
+
+    $nestedData=array();
 
     $nestedData[] = $id;
     $nestedData[] = $nome;
-    $nestedData[] = $rua;
-    $nestedData[] = $fone;
-    $nestedData[] = $cel;
-    $nestedData[] = $email;
-	$nestedData[] = $ativo;
-	$nestedData[] = $acao;
+    $nestedData[] = $ativo;
+    $nestedData[] = $acao;
     $data[] = $nestedData;
-    
+
 }
 mysqli_close($conn);
 $dados = array(
-        "draw"            => intval( $requestData['draw'] ),   
-        "recordsTotal"    => intval( $totalData ),  // numero total de dados da consulta
-        "recordsFiltered" => intval( $totalFiltered ),
-        "data"            => $data //Dados para da consulta Sql
-        );
+    "draw"            => intval( $requestData['draw'] ),
+    "recordsTotal"    => intval( $totalData ),  // numero total de dados da consulta
+    "recordsFiltered" => intval( $totalFiltered ),
+    "data"            => $data //Dados para da consulta Sql
+);
 
-        echo json_encode($dados);    
+echo json_encode($dados);
 
 ?>
 
