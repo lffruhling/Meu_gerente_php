@@ -1195,12 +1195,11 @@ class MySQL{
      *
     */
 
-    public function insere_os($idg,$id_cli,$id_tp_serv,$id_tec,$orcamento,$obs,$foto,$email,$ativo){
+    public function insere_os($idg,$id_cli,$id_tp_serv,$id_tec,$orcamento,$obs,$foto,$ativo){
         try{
-            $result = $this->con->prepare(	" INSERT INTO tb_os (ID_CLI, ID_TPOSERV, ID_COLAB, ID_JS, OBS_OS,     ".
-                                            " ORCAMENTO, FOTO, ATIVA_EMAIL, ATIVO, CREATEDAT) VALUES (:id_cli,    ".
-                                            " :id_tp_serv, :id_tec, :idg, :obs, :orcamento, :foto,:email, :ativo, ".
-                                            " now())                                                              ");
+            $result = $this->con->prepare(	" INSERT INTO tb_os (ID_CLI, ID_TPOSERV, ID_COLAB, ID_JS, OBS_OS,   ".
+                                            " ORCAMENTO, FOTO, ATIVO, CREATEDAT) VALUES (:id_cli, :id_tp_serv,  ".
+                                            " :id_tec, :idg, :obs, :orcamento, :foto, :ativo, now())            ");
 
             $result->execute(array(
                 ':idg'=> (string) $idg,
@@ -1208,8 +1207,7 @@ class MySQL{
                 ':id_tp_serv'=> (int) $id_tp_serv,
                 ':id_tec'=> (int) $id_tec,
                 ':orcamento'=> (int) $orcamento,
-                ':foto'=> (int) $foto,
-                ':email'=> (int) $email,
+                'foto'=> (int) $foto,
                 ':obs'=> (string) $obs,
                 ':ativo'=> (int) $ativo
             ));

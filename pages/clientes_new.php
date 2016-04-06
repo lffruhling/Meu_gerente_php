@@ -322,7 +322,7 @@
 						$('#inputemail').val('');
 						$('#inputativo').val('');
 						
-						open("clientes.php","_self");
+						open("clientes_new.php","_self");
 					//$('#dynamictable').DataTable().ajax.reload(null,false).draw();
 						
 					} else if(result=='0'){

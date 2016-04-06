@@ -72,14 +72,42 @@
 include "utils/utils.php";
 include "classes/mysql.php";
 
-$idg = getVoucher();
+$id = $_REQUEST['id'];
 
 $db = new MySQL();
 $db->conecta() or die("Erro de conexão ao banco");
 
-$cliente = $db->_n_cliente_os();
-$tipo_serviço = $db->_n_tipo_serv_os();
-$tecnico = $db->_n_tecnico_os();
+$idg = $db->_e_idg_os($id);
+$cliente = $db->_e_cliente_os($id);
+    foreach($cliente as $key => $value){
+        if(strpos($value,"*")){
+            $id_cli = $key;
+            break;
+        }
+    }
+
+$tipo_serviço = $db->_e_tipo_serv_os($id);
+foreach($tipo_serviço as $key => $value){
+    if(strpos($value,"*")){
+        $id_tpo = $key;
+        break;
+    }
+}
+$tecnico = $db->_e_tecnico_os($id);
+foreach($tecnico as $key => $value){
+    if(strpos($value,"*")){
+        $id_tec = $key;
+        break;
+    }
+}
+
+$obs = $db->_e_obs_os($id);
+$orca = $db->_e_orca_os($id);
+$foto = $db->_e_foto_os($id);
+$email = $db->_e_email_os($id);
+$ativo = $db->_e_ativo_os($id);
+
+
 $grupo_prod = $db->_n_grupo_produto_os();
 
 ?>
@@ -96,7 +124,13 @@ $grupo_prod = $db->_n_grupo_produto_os();
                     <select class="form-control" id="inputcli" >
                         <?php
                         foreach($cliente as $key => $value){
-                            echo "<option value='$key'>$value</option>\n";
+                            if(strpos($value,"*")){
+                                //str_replace("*","",$value);
+                                echo "<option value='$key' selected>$value</option>\n";
+                            }
+                            else{
+                                echo "<option value='$key'>$value</option>\n";
+                            }
                         }
                         ?>
                     </select>
@@ -106,7 +140,13 @@ $grupo_prod = $db->_n_grupo_produto_os();
                     <select class="form-control" id="input_tp_serv" >
                         <?php
                         foreach($tipo_serviço as $key => $value){
-                            echo "<option value='$key'>$value</option>\n";
+                            if(strpos($value,"*")){
+                                //str_replace("*","",$value);
+                                echo "<option value='$key' selected>$value</option>\n";
+                            }
+                            else{
+                                echo "<option value='$key'>$value</option>\n";
+                            }
                         }
                         ?>
                     </select>
@@ -116,7 +156,13 @@ $grupo_prod = $db->_n_grupo_produto_os();
                     <select class="form-control" id="inputtec" >
                         <?php
                         foreach($tecnico as $key => $value){
-                            echo "<option value='$key'>$value</option>\n";
+                            if(strpos($value,"*")){
+                                //str_replace("*","",$value);
+                                echo "<option value='$key' selected>$value</option>\n";
+                            }
+                            else{
+                                echo "<option value='$key'>$value</option>\n";
+                            }
                         }
                         ?>
                     </select>
@@ -124,30 +170,30 @@ $grupo_prod = $db->_n_grupo_produto_os();
                 <label for="inputobs" class="control-label">Observações </label>
                 <div class="input-icon right">
                     <i class="fa fa-user"></i>
-                    <textarea id="inputobs" type="text" placeholder="" class="form-control" required=""></textarea>
+                    <textarea id="inputobs" type="text" placeholder="" class="form-control" required=""><?php echo $obs ?></textarea>
                 </div>
                 </br>
                 <div class="checkbox">
                     <label>
-                        <input id="inputorcamento" tabindex="5" type="checkbox" checked/>&nbsp; Orçar Ordem de Serviço
+                        <input id="inputorcamento" tabindex="5" type="checkbox" <?php echo $orca ?>/>&nbsp; Orçar Ordem de Serviço
                     </label>
                 </div>
                 </br>
                 <div class="checkbox">
                     <label>
-                        <input id="inputfoto" tabindex="5" type="checkbox" checked/>&nbsp; Fotografar Peças
+                        <input id="inputfoto" tabindex="5" type="checkbox" <?php echo $foto ?>/>&nbsp; Fotografar Peças
                     </label>
                 </div>
                 </br>
                 <div class="checkbox">
                     <label>
-                        <input id="inputemail" tabindex="5" type="checkbox" checked/>&nbsp; Receber E-mail
+                        <input id="inputemail" tabindex="5" type="checkbox" <?php echo $email ?>/>&nbsp; Receber E-mail
                     </label>
                 </div>
                 </br>
                 <div class="checkbox">
                     <label>
-                        <input id="inputativo" tabindex="5" type="checkbox" checked/>&nbsp; Ativo
+                        <input id="inputativo" tabindex="5" type="checkbox" <?php echo $ativo ?>/>&nbsp; Ativo
                     </label>
                 </div>
                 <button class="btn-green done" type="button">Próximo</button>
@@ -180,7 +226,7 @@ $grupo_prod = $db->_n_grupo_produto_os();
                 <div class="form-actions text-right pal">
                     <button type="button" class="btn btn-primary" onclick="adiciona_produto();">Adiconar Produto</button>
                 </div>
-                <button class="btn-green" type="submit" onclick="cadastrar_os()">Salvar</button>
+                <button class="btn-green" type="submit" onclick="editar_os()">Salvar</button>
             </div>
         </li>
     </ul>
@@ -208,8 +254,8 @@ $grupo_prod = $db->_n_grupo_produto_os();
                 </div>
             </form>
         </div>
-        </div>
     </div>
+</div>
 </div>
 <script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
 <script type="text/javascript">
@@ -276,7 +322,7 @@ $grupo_prod = $db->_n_grupo_produto_os();
 </script>
 <script type="text/javascript">
 
-    function cadastrar_os(){
+    function editar_os(){
         var id_cli 		= $('#inputcli').val();
         var id_tp_serv	= $('#input_tp_serv').val();
         var id_tec      = $('#inputtec').val();
@@ -322,6 +368,7 @@ $grupo_prod = $db->_n_grupo_produto_os();
         }
 
         var dadosajax = {
+            'id' : <?php echo $id ?>,
             'idg' : <?php echo "'$idg'" ?>,
             'id_cli': id_cli,
             'id_tp_serv': id_tp_serv,
@@ -332,7 +379,7 @@ $grupo_prod = $db->_n_grupo_produto_os();
             'orcamento': orcamento,
             'ativo': ativo
         };
-        pageurl = './ajax/cadastra_os.php';
+        pageurl = './ajax/edita_os.php';
         //para consultar mais opcoes possiveis numa chamada ajax
         //http://api.jquery.com/jQuery.ajax/
         $.ajax({
@@ -353,8 +400,7 @@ $grupo_prod = $db->_n_grupo_produto_os();
             success: function(result)
             {
                 if(result==1){
-                    alert('Ordem de Serviço adicionada com sucesso');
-
+                    alert('Ordem de Serviço editada com sucesso');
                     //$('#inputperfil').val(0);
                     $('#inputativo').val('');
 
@@ -362,8 +408,8 @@ $grupo_prod = $db->_n_grupo_produto_os();
                     $('#dynamictable').DataTable().ajax.reload(null,false).draw();
 
                 } else if(result==0){
-                    alert('Erro ao adicionar Ordem de Serviço');
-                }
+                    alert('Erro ao editar Ordem de Serviço');
+                }else{alert(result);}
             }
         });
     }

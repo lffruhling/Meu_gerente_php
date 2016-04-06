@@ -242,7 +242,54 @@
 				}
 			});
 		});
-		</script> 
+		</script>
+        <script type="text/javascript">
+            function deletar(id){
+                if(confirm("Deseja realmente apagar o registro "+id+" ?")==false){
+                    return;
+                }
+
+                //dados a enviar, vai buscar os valores dos campos que queremos enviar para a BD
+                var dadosajax = {
+                    'id' : id
+                };
+                pageurl = 'ajax/deleta_cliente.php';
+                //para consultar mais opcoes possiveis numa chamada ajax
+                //http://api.jquery.com/jQuery.ajax/
+                $.ajax({
+                    //url da pagina
+                    url: pageurl,
+                    //parametros a passar
+                    data: dadosajax,
+                    //tipo: POST ou GET
+                    type: 'POST',
+                    //cache
+                    cache: false,
+                    //se ocorrer um erro na chamada ajax, retorna este alerta
+                    //possiveis erros: pagina nao existe, erro de codigo na pagina, falha de comunicacao/internet, etc etc etc
+                    error: function(){
+                        alert("Erro na chamada AJAX");
+                    },
+                    //retorna o resultado da pagina para onde enviamos os dados
+                    success: function(result)
+                    {
+                        if(result=='1'){
+                            $('#dynamictable').DataTable().ajax.reload(null,false).draw();
+                            alert('Registro deletado com sucesso');
+                        } else if(result=='0'){
+                            alert('Erro ao deletar Cliente');
+                        }
+                    }
+                });
+            }
+
+            function editar(id){
+                if(confirm("Deseja realmente editar o registro "+id+" ?")==false){
+                    return;
+                }
+                open("clientes_edit.php?id="+id,"_self");
+            }
+        </script>
 </body>
 </html>
 

@@ -4,14 +4,15 @@ include "../utils/utils.php";
 
 $db = new MySQL();
 
+$id			    = $_POST['id'];
 $nome			= $_POST['nome'];
 $ativo 			= $_POST['ativo'];
 
 if($db->conecta()){
 
-	$resultado = $db->insere_tipo_serv($nome,$ativo);
-	
-	echo "$resultado";
+    $resultado = $db->edita_perfil($nome,$ativo,$id);
+
+    echo "$resultado";
 }
 
 $db->desconecta();

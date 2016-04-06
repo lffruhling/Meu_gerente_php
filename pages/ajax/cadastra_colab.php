@@ -23,11 +23,10 @@ $pass			= $_POST['pass'];
 $ativo 			= $_POST['ativo'];
 
 //$dt_nasc = substr($dt_nasc,6,4)."-".substr($dt_nasc,3,2)."-".substr($dt_nasc,0,2);
-$h = fopen("cad_colab.txt","w+");
+/*$h = fopen("cad_colab.txt","w+");
 $out = "nome >> $nome\n\n perfil >> $id_perfil\n\n cpf >> $cpf\n\n data_nas >> $dt_nasc\n\n cep >> $cep\n\n rua >> $rua\n\n nro >> $nro\n\n bairro >> $bairro comp >> $comp\n\n est >> $est\n\n cid >> $cid\n\n fone1 >> $fone\n\n cel >> $cel\n\n email >> $email\n\n usu >> $user\n\n pass >> $pass\n\n";
 fwrite($h,$out,strlen($out));
-fclose($h);
-
+fclose($h);*/
 
 if($db->conecta()){
 
