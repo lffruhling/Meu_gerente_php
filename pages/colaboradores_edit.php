@@ -342,7 +342,12 @@ $ativo      = $db->_e_ativo_colab($id);
         }
 
         if (pass != pass_conf){
+<<<<<<< HEAD
             alert('As senhas informadas não são iguais. Por favor informe a mesma senha nos dois campos')
+=======
+            alert('As senhas informadas não são iguais. Por favor informe a mesma senha nos dois campos');
+            return;
+>>>>>>> 0a42978f780ef80dbafa11025c67da6a7ea9b6e1
         }
         var dadosajax = {
             'id' : <?php echo $id ?>,

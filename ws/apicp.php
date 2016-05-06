@@ -1,4 +1,6 @@
 <?php
+//Leia mais em: CRUD com PHP PDO http://www.devmedia.com.br/crud-com-php-pdo/28873#ixzz479cC5v7x
+
 # Definindo pacotes de retorno em padrão JSON...
 header('Content-Type: application/json;charset=utf-8');
  
@@ -118,8 +120,8 @@ $app->get('/usuarios',function(){
 
 $app->get('/servicos',function(){ 
     # Abrir conexão com banco de dados...
-    $conexao = new MySQLi("localhost","u564893296_root","06111992","u564893296_mg");
- 	//$conexao = new MySQLi("localhost","root","","mg");
+    //$conexao = new MySQLi("localhost","u564893296_root","06111992","u564893296_mg");
+ 	$conexao = new MySQLi("localhost","root","","mg");
     # Validar se houve conexão...
     if(!$conexao){ echo "Não foi possível se conectar ao banco de dados"; exit;}
  
@@ -139,11 +141,11 @@ $app->get('/servicos',function(){
 								 "	FROM 																".
 								 "	    tb_os OS 														".
 								 "	        LEFT JOIN 													".
-								 "	    tb_tpo_servico tposerv ON tposerv.ID_TPOSERV = OS.ID_TPOSERV 	".
+								 "	    tb_tpo_servico tposerv ON tposerv.ID_TPOSERV = os.ID_TPOSERV 	".
 								 "	        LEFT JOIN 													".
-								 "	    tb_colaboradores colab ON colab.ID_COLAB = OS.ID_COLAB 			".
+								 "	    tb_colaboradores colab ON colab.ID_COLAB = os.ID_COLAB 			".
 								 "	        LEFT JOIN 													".
-								 "	    tb_cliente cli ON cli.ID_CLI = OS.ID_CLI 						".
+								 "	    tb_cliente cli ON cli.ID_CLI = os.ID_CLI 						".
 								 "	WHERE 																".
 								 "	    OS.ID_STATUS IN (1 , 2) AND OS.ATIVO = 1 						".
 								 "	        AND (OS.DELETADO = 0 OR OS.DELETADO IS NULL)				");
@@ -166,21 +168,21 @@ $app->get('/servicos',function(){
             echo '      "data": "'.$r["data_criacao"].'",'."\n";
             $id_os = $r["ID_OS"];
             $produtos = $conexao->query("	SELECT 															".
-                                        "	    prodUs.ID_PROD_US, 											".
-                                        "	    prod.NOME_PROD, 											".
-                                        "	    gprod.DESC_GRUP, 											".
-                                        "	    prodUs.QUANTIDADE_PROD_US QUANT 							".
-                                        "	FROM 															".
-                                        "	    tb_produtos_usados prodUs 									".
-                                        "	        LEFT JOIN 												".
-                                        "	    tb_produtos prod ON prod.ID_PROD = prodUs.ID_PROD 			".
-                                        "	        LEFT JOIN 												".
-                                        "	    tb_grupo_produto gprod ON gprod.ID_GRUP = prodUs.ID_GRUP 	".
-                                        "	WHERE 															".
-                                        "	    prodUs.ATIVO = 1 											".
-                                        "	        AND (prodUs.DELETADO = 0 								".
-                                        "	        OR prodUs.DELETADO IS NULL) 							".
-                                        "	        AND prodUs.ID_OS = $id_os								");
+                "	    prodUs.ID_PROD_US, 											".
+                "	    prod.NOME_PROD, 											".
+                "	    gprod.DESC_GRUP, 											".
+                "	    prodUs.QUANTIDADE_PROD_US QUANT 							".
+                "	FROM 															".
+                "	    tb_produtos_usados prodUs 									".
+                "	        LEFT JOIN 												".
+                "	    tb_produtos prod ON prod.ID_PROD = prodUs.ID_PROD 			".
+                "	        LEFT JOIN 												".
+                "	    tb_grupo_produto gprod ON gprod.ID_GRUP = prodUs.ID_GRUP 	".
+                "	WHERE 															".
+                "	    prodUs.ATIVO = 1 											".
+                "	        AND (prodUs.DELETADO = 0 								".
+                "	        OR prodUs.DELETADO IS NULL) 							".
+                "	        AND prodUs.ID_OS = $id_os								");
 
             if ($produtos -> num_rows>0){
                 echo '      "produtos":['."\n";
@@ -237,8 +239,7 @@ $app->get('/servicos/id', function() use($app){
     //se n㯠existir o caminho cria
 
     //se existir a pasta
-    $conexao = new MySQLi("localhost","u564893296_root","06111992","u564893296_mg");
-    //$conexao = new MySQLi("localhost","root","","mg");
+    $conexao = new MySQLi("localhost","root","","mg");
     # Validar se houve conexão...
     if(!$conexao){ echo "Não foi possível se conectar ao banco de dados"; exit;}
 
@@ -259,11 +260,11 @@ $app->get('/servicos/id', function() use($app){
                                 "	FROM 																".
                                 "	    tb_os OS 														".
                                 "	        LEFT JOIN 													".
-                                "	    tb_tpo_servico tposerv ON tposerv.ID_TPOSERV = OS.ID_TPOSERV 	".
+                                "	    tb_tpo_servico tposerv ON tposerv.ID_TPOSERV = os.ID_TPOSERV 	".
                                 "	        LEFT JOIN 													".
-                                "	    tb_colaboradores colab ON colab.ID_COLAB = OS.ID_COLAB 			".
+                                "	    tb_colaboradores colab ON colab.ID_COLAB = os.ID_COLAB 			".
                                 "	        LEFT JOIN 													".
-                                "	    tb_cliente cli ON cli.ID_CLI = OS.ID_CLI 						".
+                                "	    tb_cliente cli ON cli.ID_CLI = os.ID_CLI 						".
                                 "	WHERE 																".
                                 "	    OS.ID_STATUS IN (1 , 2) AND OS.ATIVO = 1 						".
                                 "	        AND (OS.DELETADO = 0 OR OS.DELETADO IS NULL)                ".
@@ -347,6 +348,108 @@ $app->get('/servicos/id', function() use($app){
         $conexao->close();
 
     }
+});
+
+$app->post('/device/registration', function() use($app){
+
+    $request = \Slim\Slim::getInstance()->request();
+    $requisicao = json_decode($request->getBody());
+    $device_id = $requisicao->{'device_id'};
+    $id_tec = $requisicao->{'id_tec'};
+
+    try {
+        $pdo = new PDO('mysql:host=localhost;dbname=mg', 'root', '');
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        $stmt = $pdo->prepare('UPDATE tb_cliente SET ID_DEVICE_CLI = :device_id WHERE ID_CLI = :id_tec');
+        $stmt->execute(array(
+            ':id_tec' => $id_tec,
+            ':device_id' => $device_id
+        ));
+
+        $status = array('status' => 'success');
+    } catch(PDOException $e) {
+        $status = array('Error: ' => $e->getMessage());
+    }
+
+    echo json_encode($status);
+
+});
+
+$app->post('/os/orcada/produtos', function() use($app){
+
+    $request = \Slim\Slim::getInstance()->request();
+    $requisicao = json_decode($request->getBody());
+
+    try {
+        $pdo = new PDO('mysql:host=localhost;dbname=mg', 'root', '');
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        foreach ($requisicao as $objeto) {
+            $id_os = $objeto->{'id_web_os'};
+            $nome_prod = $objeto->{'nome_prod'};
+            $quant_prod = $objeto->{'quant_prod'};
+
+            /* Altera o status da OS*/
+            $stmt = $pdo->prepare('UPDATE tb_os SET ID_STATUS = 3 WHERE ID_OS = :id_os');
+            $stmt->execute(array(
+                ':id_os' => $id_os,
+            ));
+
+            /*Insere os produtos que foram orçados para a O.S*/
+            $stmt = $pdo->prepare('INSERT INTO tb_produtos_orcados (id_os, nome_prod, quant_prod) VALUES(:id_os, :nome_prod, :quant_prod)');
+            $stmt->execute(array(
+                ':id_os' => $id_os,
+                ':nome_prod' => $nome_prod,
+                ':quant_prod' => $quant_prod
+            ));
+
+        }
+        $status = array('status' => 'success');
+    } catch(PDOException $e) {
+        $status = array('Error: ' => $e->getMessage());
+    }
+
+    echo json_encode($status);
+
+});
+
+$app->post('/os/exec/fotos', function() use($app){
+
+    $request = \Slim\Slim::getInstance()->request();
+    $requisicao = json_decode($request->getBody());
+
+    try {
+        $pdo = new PDO('mysql:host=localhost;dbname=mg', 'root', '');
+        $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+        foreach ($requisicao as $objeto) {
+            $id_os = $objeto->{'id_web_os'};
+            $nome_prod = $objeto->{'nome_prod'};
+            $quant_prod = $objeto->{'quant_prod'};
+
+            /* Altera o status da OS*/
+            $stmt = $pdo->prepare('UPDATE tb_os SET ID_STATUS = 3 WHERE ID_OS = :id_os');
+            $stmt->execute(array(
+                ':id_os' => $id_os,
+            ));
+
+            /*Insere os produtos que foram orçados para a O.S*/
+            $stmt = $pdo->prepare('INSERT INTO tb_produtos_orcados (id_os, nome_prod, quant_prod) VALUES(:id_os, :nome_prod, :quant_prod)');
+            $stmt->execute(array(
+                ':id_os' => $id_os,
+                ':nome_prod' => $nome_prod,
+                ':quant_prod' => $quant_prod
+            ));
+
+        }
+        $status = array('status' => 'success');
+    } catch(PDOException $e) {
+        $status = array('Error: ' => $e->getMessage());
+    }
+
+    echo json_encode($status);
+
 });
 # Executar a API (deixá-la acessível)...
 $app->run();

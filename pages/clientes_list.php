@@ -287,7 +287,12 @@
                 if(confirm("Deseja realmente editar o registro "+id+" ?")==false){
                     return;
                 }
+<<<<<<< HEAD
                 open("clientes_edit.php?id="+id,"_self");
+=======
+                open("clientes_edit.php?idg=<?php echo $id ?>","_self");
+
+>>>>>>> 0a42978f780ef80dbafa11025c67da6a7ea9b6e1
             }
         </script>
 </body>

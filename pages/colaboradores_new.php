@@ -111,7 +111,7 @@ $perfil = $db->_n_perfil_colab();
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-8">
+                                                <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="inputbairro" class="control-label">Bairro</label>
                                                         <div class="input-icon right">
@@ -120,7 +120,7 @@ $perfil = $db->_n_perfil_colab();
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-8">
+                                                <div class="col-md-6">
                                                     <div class="form-group">
                                                         <label for="inputcomp" class="control-label">Complemento</label>
                                                         <div class="input-icon right">
@@ -129,7 +129,7 @@ $perfil = $db->_n_perfil_colab();
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4">
+                                                <div class="col-md-3">
                                                     <div class="form-group">
                                                         <label for="inputestado" class="control-label">Estado</label>
                                                         <div class="input-icon right">
@@ -165,7 +165,7 @@ $perfil = $db->_n_perfil_colab();
                                                         </div>
                                                     </div>
                                                 </div>
-                                                <div class="col-md-4">
+                                                <div class="col-md-12">
                                                     <div class="form-group">
                                                         <label for="inputemail" class="control-label">E-Mail *</label>
                                                         <div class="input-icon right">
@@ -189,6 +189,15 @@ $perfil = $db->_n_perfil_colab();
                                                         <div class="input-icon right">
                                                             <i class="fa fa-user"></i>
                                                             <input id="inputpass" type="text" placeholder="" class="form-control" required=""/>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="col-md-4">
+                                                    <div class="form-group">
+                                                        <label for="inputconfpass" class="control-label">Confirmação de Senha *</label>
+                                                        <div class="input-icon right">
+                                                            <i class="fa fa-user"></i>
+                                                            <input id="inputconfpass" type="text" placeholder="" class="form-control" required=""/>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -292,6 +301,7 @@ $perfil = $db->_n_perfil_colab();
             var email 		= $('#inputemail').val();
             var user 		= $('#inputuser').val();
             var pass 		= $('#inputpass').val();
+            var pass_conf   = $('#inputconfpass').val();
 			if(nome==''){
 				alert("Preencha o campo Nome");
 				return;
@@ -301,6 +311,11 @@ $perfil = $db->_n_perfil_colab();
 			}else{
 				var ativo		= '0';	
 			}
+
+            if (pass != pass_conf){
+                alert('As senhas informadas não são iguais. Por favor informe a mesma senha nos dois campos');
+                return;
+            }
 			
 			var dadosajax = {
 				'nome': nome,

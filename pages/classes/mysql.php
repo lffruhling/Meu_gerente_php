@@ -4,7 +4,7 @@
 // Conexão com o banco
 static $dbhost = 'localhost';
 static $dbuser = 'root';
-static $dbpass = '';
+static $dbpass = 'root';
 static $dbtable = 'mg';
 
 class MySQL{

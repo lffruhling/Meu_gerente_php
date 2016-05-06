@@ -4,14 +4,22 @@
 // Conexão com o banco
 static $dbhost = 'localhost';
 static $dbuser = 'root';
+<<<<<<< HEAD
 static $dbpass = '';
+=======
+static $dbpass = 'root';
+>>>>>>> 0a42978f780ef80dbafa11025c67da6a7ea9b6e1
 static $dbtable = 'mg';
 
 class MySQL{
 	// Conexão com o banco
 	static public $dbhost = 'localhost';
 	static public $dbuser = 'root';
+<<<<<<< HEAD
 	static public $dbpass = '';
+=======
+	static public $dbpass = 'root';
+>>>>>>> 0a42978f780ef80dbafa11025c67da6a7ea9b6e1
 	static public $dbtable = 'mg';
 
 	protected $conn;
@@ -1510,7 +1518,11 @@ class MySQL{
         return $resultado;
     }
 
+<<<<<<< HEAD
     public function edita_os($id_cli,$id_tp_serv,$id_tec,$orcamento,$obs,$foto,$email,$ativo,$id){
+=======
+    public function edita_os($id_cli,$id_tp_serv,$id_tec,$orcamento,$obs,$foto,$ativo,$id){
+>>>>>>> 0a42978f780ef80dbafa11025c67da6a7ea9b6e1
         try{
             $result = $this->con->prepare(	" UPDATE tb_os SET          ".
                                             " ID_CLI = :id_cli,         ".
@@ -1519,6 +1531,7 @@ class MySQL{
                                             " OBS_OS = :obs,            ".
                                             " ORCAMENTO = :orcamento,   ".
                                             " FOTO = :foto,             ".
+<<<<<<< HEAD
                                             " ATIVA_EMAIL = :email,     ".
                                             " ATIVO = :ativo,           ".
                                             " UPDATEDAT = now()         ".
@@ -1526,13 +1539,24 @@ class MySQL{
 
             $result->execute(array(
                	':id'=> (int) $id,
+=======
+                                            " ATIVO = :ativo,           ".
+                                            " UPDATEDAT = now()         ".
+                                            " WHERE ID_OS = :id          ");
+
+            $result->execute(array(
+                ':id'=> (int) $id,
+>>>>>>> 0a42978f780ef80dbafa11025c67da6a7ea9b6e1
                 ':id_cli'=> (int) $id_cli,
                 ':id_tp_serv'=> (int) $id_tp_serv,
                 ':id_tec'=> (int) $id_tec,
                 ':obs'=> (string) $obs,
                 ':orcamento'=> (int) $orcamento,
                 ':foto'=> (int) $foto,
+<<<<<<< HEAD
                 ':email'=> (int) $email,
+=======
+>>>>>>> 0a42978f780ef80dbafa11025c67da6a7ea9b6e1
                 ':ativo'=> (int) $ativo
             ));
 

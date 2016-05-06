@@ -59,7 +59,11 @@ $ativo  = $db->_e_ativo_cli($id);
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="panel panel-green">
+<<<<<<< HEAD
                             <div class="panel-heading">Novo Cliente</div>
+=======
+                            <div class="panel-heading">Edição de Cliente</div>
+>>>>>>> 0a42978f780ef80dbafa11025c67da6a7ea9b6e1
                             <div class="panel-body pan">
                                 <form action="#">
                                     <div class="form-body pal">
