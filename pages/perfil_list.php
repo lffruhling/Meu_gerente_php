@@ -182,7 +182,11 @@
             <ol class="breadcrumb page-breadcrumb pull-right">
                 <li><i class="fa fa-home"></i>&nbsp;<a href="dashboard.html">Início</a>&nbsp;&nbsp;<i
                         class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
+<<<<<<< HEAD
                 <li class="hidden"><a href="#">Colaboradores</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
+=======
+                <li class="hidden"><a href="#">Perfil</a>&nbsp;&nbsp;<i class="fa fa-angle-right"></i>&nbsp;&nbsp;</li>
+>>>>>>> 81aa70dcccf2ef154088947faac0a15644a8e357
                 <li class="active">Perfil</li>
             </ol>
             <div class="clearfix">
