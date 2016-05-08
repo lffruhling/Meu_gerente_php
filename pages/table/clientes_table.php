@@ -28,15 +28,15 @@ if(!$ret){
 	die('Erro na seleção do database');
 }
 
-$query = "SELECT ID_CLI, NOME_CLI, RUA_CLI, FONE1_CLI, CELULAR_CLI, EMAIL_CLI, ATIVO FROM tb_cliente";
+$query = "SELECT ID_CLI, NOME_CLI, RUA_CLI, FONE1_CLI, CELULAR_CLI, EMAIL_CLI, ATIVO FROM tb_cliente WHERE (DELETADO = 0 OR DELETADO IS NULL)";
 $result = mysqli_query($conn,$query);
 $totalData = mysqli_num_rows($result);
 $totalFiltered = $totalData;
 
-$query = "SELECT ID_CLI, NOME_CLI, RUA_CLI, FONE1_CLI, CELULAR_CLI, EMAIL_CLI, ATIVO FROM tb_cliente";
+$query = "SELECT ID_CLI, NOME_CLI, RUA_CLI, FONE1_CLI, CELULAR_CLI, EMAIL_CLI, ATIVO FROM tb_cliente WHERE (DELETADO = 0 OR DELETADO IS NULL)";
 
 if( !empty($requestData['search']['value']) ) {   
-    $query.=" WHERE (ID_CLI LIKE '%".$requestData['search']['value']."%' ";    
+    $query.=" AND (ID_CLI LIKE '%".$requestData['search']['value']."%' ";
     $query.=" OR NOME_CLI LIKE '%".$requestData['search']['value']."%'";
 	$query.=" OR RUA_CLI LIKE '%".$requestData['search']['value']."%'";
 	$query.=" OR FONE1_CLI LIKE '%".$requestData['search']['value']."%'";
@@ -126,17 +126,26 @@ while ($retorno=mysqli_fetch_array ( $result )){
 	$nestedData[] = $ativo;
 	$nestedData[] = $acao;
     $data[] = $nestedData;
-    
+
+}
+if ($totalFiltered != 0) {
+    $dados = array(
+        "draw" => intval($requestData['draw']),
+        "recordsTotal" => intval($totalData),  // numero total de dados da consulta
+        "recordsFiltered" => intval($totalFiltered),
+        "data" => $data //Dados para da consulta Sql
+    );
+}else{
+    $dados = array(
+        "draw" => 1,
+        "recordsTotal" => "0",  // numero total de dados da consulta
+        "recordsFiltered" => "0",
+        "data" => [] //Dados para da consulta Sql
+    );
 }
 mysqli_close($conn);
-$dados = array(
-        "draw"            => intval( $requestData['draw'] ),   
-        "recordsTotal"    => intval( $totalData ),  // numero total de dados da consulta
-        "recordsFiltered" => intval( $totalFiltered ),
-        "data"            => $data //Dados para da consulta Sql
-        );
+        echo json_encode($dados);
 
-        echo json_encode($dados);    
 
 ?>
 

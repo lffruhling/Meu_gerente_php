@@ -4,14 +4,14 @@
 // Conexão com o banco
 static $dbhost = 'localhost';
 static $dbuser = 'root';
-static $dbpass = 'root';
+static $dbpass = '';
 static $dbtable = 'mg';
 
 class MySQL{
 	// Conexão com o banco
 	static public $dbhost = 'localhost';
 	static public $dbuser = 'root';
-	static public $dbpass = 'root';
+	static public $dbpass = '';
 	static public $dbtable = 'mg';
 
 	protected $conn;
@@ -44,9 +44,12 @@ class MySQL{
     */
 
     public function valida_login($usuario, $senha){
-		$result = $this->con->prepare(" SELECT USUARIO_COLAB, SENHA_COLAB FROM 	".
-									  " tb_colaboradores WHERE USUARIO_COLAB = ? ". 
-									  " AND SENHA_COLAB = ?");
+		$result = $this->con->prepare(" SELECT USUARIO_COLAB, SENHA_COLAB   ".
+                                      " FROM tb_colaboradores               ".
+									  " WHERE USUARIO_COLAB = ?             ".
+									  " AND SENHA_COLAB = ?                 ".
+									  " AND ATIVO = 1                       ".
+									  " AND ID_PERFIL <= 1                  ");
 		$result->bindParam(1,$usuario);
 		$result->bindParam(2,base64_encode($senha));
 		if($result->execute()){
