@@ -1,3 +1,20 @@
+<?php
+// A sessão precisa ser iniciada em cada página diferente
+if (!isset($_SESSION)) session_start();
+
+$nivel_necessario = 1;
+
+// Verifica se não há a variável da sessão que identifica o usuário
+if (!isset($_SESSION['UsuarioID']) OR ($_SESSION['UsuarioNivel'] > $nivel_necessario)) {
+    // Destrói a sessão por segurança
+    session_destroy();
+    // Redireciona o visitante de volta pro login
+    header("Location: index.php"); exit;
+}elseif ($id = $_REQUEST['id'] == null OR $id = $_REQUEST['id'] == 0){
+    header("Location: produtos_list.php");
+    exit;
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -50,6 +67,136 @@ $desc = $db->_e_desc_prod($id);
 $ativo = $db->_e_ativo_prod($id);
 
 ?>
+<div>
+    <!--INICIO MENU TOPO-->
+    <div id="header-topbar-option-demo" class="page-header-topbar">
+        <nav id="topbar" role="navigation" style="margin-bottom: 0;" data-step="3" class="navbar navbar-default navbar-static-top">
+            <div class="navbar-header">
+                <button type="button" data-toggle="collapse" data-target=".sidebar-collapse" class="navbar-toggle"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button>
+                <a id="logo" href="menu.php" class="navbar-brand"><span class="fa fa-rocket"></span><span class="logo-text">Meu Gerente</span><span style="display: none" class="logo-text-icon">µ</span></a></div>
+            <div class="topbar-main"><a id="menu-toggle" href="#" class="hidden-xs"><i class="fa fa-bars"></i></a>
+                <ul class="nav navbar navbar-top-links navbar-right mbn">
+                    <li class="dropdown"><a data-hover="dropdown" href="#" class="dropdown-toggle"><i class="fa fa-bell fa-fw"></i><span class="badge badge-green">orc 3</span></a>
+
+                    </li>
+                    <li class="dropdown"><a data-hover="dropdown" href="#" class="dropdown-toggle"><i class="fa fa-envelope fa-fw"></i><span class="badge badge-orange">7</span></a>
+
+                    </li>
+                    <li class="dropdown"><a data-hover="dropdown" href="#" class="dropdown-toggle"><i class="fa fa-tasks fa-fw"></i><span class="badge badge-yellow">8</span></a>
+                    </li>
+                    <li class="dropdown topbar-user"><a data-hover="dropdown" href="#" class="dropdown-toggle"><img src="images/avatar/businessman.png" alt="" class="img-responsive img-circle"/>&nbsp;<span class="hidden-xs"><?php echo $_SESSION['UsuarioNome']; ?></span>&nbsp;<span class="caret"></span></a>
+                        <ul class="dropdown-menu dropdown-user pull-right">
+                            <li><a href="#"><i class="fa fa-lock"></i>Alterar Senha</a></li>
+                            <li><a href="logout.php"><i class="fa fa-key"></i>Sair</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+<!--END TOPBAR-->
+<div id="wrapper">
+<!--BEGIN SIDEBAR MENU-->
+<nav id="sidebar" role="navigation" data-step="2" data-intro="Template has &lt;b&gt;many navigation styles&lt;/b&gt;"
+     data-position="right" class="navbar-default navbar-static-side">
+    <div class="sidebar-collapse menu-scroll">
+        <ul id="side-menu" class="nav">
+
+            <div class="clearfix"></div>
+            <li>
+                <a href="menu.php">
+                    <i class="fa fa-bar-chart-o fa-fw">
+                        <div class="icon-bg bg-orange"></div>
+                    </i>
+                    <span class="menu-title">Painel de Controle</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="clientes_list.php">
+                    <i class="fa fa-users fa-fw">
+                        <div class="icon-bg bg-pink"></div>
+                    </i>
+                    <span class="menu-title">Clientes</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="colaboradores_list.php">
+                    <i class="fa fa-user-md fa-fw">
+                        <div class="icon-bg bg-green"></div>
+                    </i>
+                    <span class="menu-title">Colaboradores</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="grupo_prod_list.php">
+                    <i class="fa fa-list fa-fw">
+                        <div class="icon-bg bg-red"></div>
+                    </i>
+                    <span class="menu-title">Grupo de Produtos</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="os_list.php">
+                    <i class="fa fa-file-text fa-fw">
+                        <div class="icon-bg bg-grey"></div>
+                    </i>
+                    <span class="menu-title">Ordens de Serviços</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="perfil_list.php">
+                    <i class="fa fa-user fa-fw">
+                        <div class="icon-bg bg-violet"></div>
+                    </i>
+                    <span class="menu-title">Perfil</span>
+                </a>
+            </li>
+
+            <li class="active">
+                <a href="produtos_list.php">
+                    <i class="fa fa-shopping-cart fa-fw">
+                        <div class="icon-bg bg-blue"></div>
+                    </i>
+                    <span class="menu-title">Produtos</span>
+                </a>
+            </li>
+
+            <li>
+                <a href="tipo_serv_list.php">
+                    <i class="fa fa-cog fa-fw">
+                        <div class="icon-bg bg-yellow"></div>
+                    </i>
+                    <span class="menu-title">Tipos de Serviços</span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<div id="page-wrapper">
+<!--BEGIN TITLE & BREADCRUMB PAGE-->
+<div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
+    <div class="page-header pull-left">
+        <div class="page-title">
+            Produtos
+        </div>
+    </div>
+    <ol class="breadcrumb page-breadcrumb pull-right">
+        <li><i class="fa fa-home"></i>&nbsp;<a href="menu.php">Home</a><i
+                class="fa fa-angle-right"></i></li>
+        <li class="active"><a href="produtos_list.php">Produtos</a><i class="fa fa-angle-right"></i></li></li>
+        <li class="active">Edição de Produtos</li>
+    </ol>
+    <div class="clearfix">
+    </div>
+</div>
+<!--END TITLE & BREADCRUMB PAGE-->
+<!--BEGIN CONTENT-->
 <div class="page-content">
     <div id="tab-general">
         <div class="row mbl">
@@ -167,6 +314,8 @@ $ativo = $db->_e_ativo_prod($id);
             </div>
         </div>
     </div>
+</div>
+</div>
 </div>
 <script src="script/jquery-1.10.2.min.js"></script>
 <script src="script/jquery-migrate-1.2.1.min.js"></script>

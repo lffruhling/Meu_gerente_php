@@ -132,13 +132,22 @@ while ($retorno=mysqli_fetch_array ( $result )){
     $data[] = $nestedData;
 
 }
+if ($totalFiltered != 0) {
+    $dados = array(
+        "draw" => intval($requestData['draw']),
+        "recordsTotal" => intval($totalData),  // numero total de dados da consulta
+        "recordsFiltered" => intval($totalFiltered),
+        "data" => $data //Dados para da consulta Sql
+    );
+}else{
+    $dados = array(
+        "draw" => 1,
+        "recordsTotal" => "0",  // numero total de dados da consulta
+        "recordsFiltered" => "0",
+        "data" => [] //Dados para da consulta Sql
+    );
+}
 mysqli_close($conn);
-$dados = array(
-    "draw"            => intval( $requestData['draw'] ),
-    "recordsTotal"    => intval( $totalData ),  // numero total de dados da consulta
-    "recordsFiltered" => intval( $totalFiltered ),
-    "data"            => $data //Dados para da consulta Sql
-);
 
 echo json_encode($dados);
 
