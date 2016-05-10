@@ -10,15 +10,14 @@ if (!isset($_SESSION['UsuarioID']) OR ($_SESSION['UsuarioNivel'] > $nivel_necess
     session_destroy();
     // Redireciona o visitante de volta pro login
     header("Location: index.php"); exit;
-}elseif ($id = $_REQUEST['id'] == null OR $id = $_REQUEST['id'] == 0){
-    header("Location: perfil_list.php");
-    exit;
 }
+
+$usuario = $_SESSION['UsuarioNome'];
 ?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Perfil</title>
+    <title>Alteração de Senha</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,23 +38,18 @@ if (!isset($_SESSION['UsuarioID']) OR ($_SESSION['UsuarioNivel'] > $nivel_necess
     <link type="text/css" rel="stylesheet" href="styles/zabuto_calendar.min.css">
     <link type="text/css" rel="stylesheet" href="styles/pace.css">
 </head>
-<body>
 <?php
 include "utils/utils.php";
 include "classes/mysql.php";
 
-$id = $_REQUEST['id'];
-
 $db = new MySQL();
 $db->conecta() or die("Erro de conexão ao banco");
-
-$nome   = $db->_e_nome_perf($id);
-$ativo  = $db->_e_ativo_perf($id);
 
 $total_abertas = $db->total_abertas();
 $total_orcadas = $db->total_orcadas();
 $total_concluidas = $db->total_concluidas();
 ?>
+<body>
 <div>
     <!--INICIO MENU TOPO-->
     <div id="header-topbar-option-demo" class="page-header-topbar">
@@ -86,151 +80,161 @@ $total_concluidas = $db->total_concluidas();
 </div>
 <!--END TOPBAR-->
 <div id="wrapper">
-<!--BEGIN SIDEBAR MENU-->
-<nav id="sidebar" role="navigation" data-step="2" data-intro="Template has &lt;b&gt;many navigation styles&lt;/b&gt;"
-     data-position="right" class="navbar-default navbar-static-side">
-    <div class="sidebar-collapse menu-scroll">
-        <ul id="side-menu" class="nav">
+    <!--BEGIN SIDEBAR MENU-->
+    <nav id="sidebar" role="navigation" data-step="2" data-intro="Template has &lt;b&gt;many navigation styles&lt;/b&gt;"
+         data-position="right" class="navbar-default navbar-static-side">
+        <div class="sidebar-collapse menu-scroll">
+            <ul id="side-menu" class="nav">
 
-            <div class="clearfix"></div>
-            <li>
-                <a href="menu.php">
-                    <i class="fa fa-bar-chart-o fa-fw">
-                        <div class="icon-bg bg-orange"></div>
-                    </i>
-                    <span class="menu-title">Painel de Controle</span>
-                </a>
-            </li>
+                <div class="clearfix"></div>
+                <li>
+                    <a href="menu.php">
+                        <i class="fa fa-bar-chart-o fa-fw">
+                            <div class="icon-bg bg-orange"></div>
+                        </i>
+                        <span class="menu-title">Painel de Controle</span>
+                    </a>
+                </li>
 
-            <li>
-                <a href="clientes_list.php">
-                    <i class="fa fa-users fa-fw">
-                        <div class="icon-bg bg-pink"></div>
-                    </i>
-                    <span class="menu-title">Clientes</span>
-                </a>
-            </li>
+                <li>
+                    <a href="clientes_list.php">
+                        <i class="fa fa-users fa-fw">
+                            <div class="icon-bg bg-pink"></div>
+                        </i>
+                        <span class="menu-title">Clientes</span>
+                    </a>
+                </li>
 
-            <li>
-                <a href="colaboradores_list.php">
-                    <i class="fa fa-user-md fa-fw">
-                        <div class="icon-bg bg-green"></div>
-                    </i>
-                    <span class="menu-title">Colaboradores</span>
-                </a>
-            </li>
+                <li>
+                    <a href="colaboradores_list.php">
+                        <i class="fa fa-user-md fa-fw">
+                            <div class="icon-bg bg-green"></div>
+                        </i>
+                        <span class="menu-title">Colaboradores</span>
+                    </a>
+                </li>
 
-            <li>
-                <a href="grupo_prod_list.php">
-                    <i class="fa fa-list fa-fw">
-                        <div class="icon-bg bg-red"></div>
-                    </i>
-                    <span class="menu-title">Grupo de Produtos</span>
-                </a>
-            </li>
+                <li>
+                    <a href="grupo_prod_list.php">
+                        <i class="fa fa-list fa-fw">
+                            <div class="icon-bg bg-red"></div>
+                        </i>
+                        <span class="menu-title">Grupo de Produtos</span>
+                    </a>
+                </li>
 
-            <li>
-                <a href="os_list.php">
-                    <i class="fa fa-file-text fa-fw">
-                        <div class="icon-bg bg-grey"></div>
-                    </i>
-                    <span class="menu-title">Ordens de Serviços</span>
-                </a>
-            </li>
+                <li>
+                    <a href="os_list.php">
+                        <i class="fa fa-file-text fa-fw">
+                            <div class="icon-bg bg-grey"></div>
+                        </i>
+                        <span class="menu-title">Ordens de Serviços</span>
+                    </a>
+                </li>
 
-            <li  class="active">
-                <a href="perfil_list.php">
-                    <i class="fa fa-user fa-fw">
-                        <div class="icon-bg bg-violet"></div>
-                    </i>
-                    <span class="menu-title">Perfil</span>
-                </a>
-            </li>
+                <li>
+                    <a href="perfil_list.php">
+                        <i class="fa fa-user fa-fw">
+                            <div class="icon-bg bg-violet"></div>
+                        </i>
+                        <span class="menu-title">Perfil</span>
+                    </a>
+                </li>
 
-            <li>
-                <a href="produtos_list.php">
-                    <i class="fa fa-shopping-cart fa-fw">
-                        <div class="icon-bg bg-blue"></div>
-                    </i>
-                    <span class="menu-title">Produtos</span>
-                </a>
-            </li>
+                <li>
+                    <a href="produtos_list.php">
+                        <i class="fa fa-shopping-cart fa-fw">
+                            <div class="icon-bg bg-blue"></div>
+                        </i>
+                        <span class="menu-title">Produtos</span>
+                    </a>
+                </li>
 
-            <li>
-                <a href="tipo_serv_list.php">
-                    <i class="fa fa-cog fa-fw">
-                        <div class="icon-bg bg-yellow"></div>
-                    </i>
-                    <span class="menu-title">Tipos de Serviços</span>
-                </a>
-            </li>
-        </ul>
-    </div>
-</nav>
-<div id="page-wrapper">
-    <!--BEGIN TITLE & BREADCRUMB PAGE-->
-    <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
-        <div class="page-header pull-left">
-            <div class="page-title">
-                Perfil
+                <li>
+                    <a href="tipo_serv_list.php">
+                        <i class="fa fa-cog fa-fw">
+                            <div class="icon-bg bg-yellow"></div>
+                        </i>
+                        <span class="menu-title">Tipos de Serviços</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="page-wrapper">
+        <!--BEGIN TITLE & BREADCRUMB PAGE-->
+        <div id="title-breadcrumb-option-demo" class="page-title-breadcrumb">
+            <div class="page-header pull-left">
+                <div class="page-title">
+                    Alteração de Senha
+                </div>
+            </div>
+            <ol class="breadcrumb page-breadcrumb pull-right">
+                <li><i class="fa fa-home"></i>&nbsp;<a href="menu.php">Home</a><i
+                        class="fa fa-angle-right"></i></li>
+                <li class="active">Alteração de Senha</li>
+            </ol>
+            <div class="clearfix">
             </div>
         </div>
-        <ol class="breadcrumb page-breadcrumb pull-right">
-            <li><i class="fa fa-home"></i>&nbsp;<a href="menu.php">Home</a><i
-                    class="fa fa-angle-right"></i></li>
-            <a href="perfil_list.php">Perfil</a>&nbsp;<i class="fa fa-angle-right"></i>&nbsp;</li>
-            <li class="active">Edição de Perfil</li>
-        </ol>
-        <div class="clearfix">
-        </div>
-    </div>
-    <!--END TITLE & BREADCRUMB PAGE-->
-    <!--BEGIN CONTENT-->
-<div class="page-content">
-    <div id="tab-general">
-        <div class="row mbl">
-            <div class="col-lg-12">
-                <div class="row">
+        <!--END TITLE & BREADCRUMB PAGE-->
+        <!--BEGIN CONTENT-->
+        <div class="page-content">
+            <div id="tab-general">
+                <div class="row mbl">
                     <div class="col-lg-12">
-                        <div class="panel panel-green">
-                            <div class="panel-heading">Novo Perfil</div>
-                            <div class="panel-body pan">
-                                <form action="#">
-                                    <div class="form-body pal">
-                                        <div class="row">
-                                            <div class="col-md-12">
-                                                <div class="form-group">
-                                                    <label for="inputname" class="control-label">Perfil *</label>
-                                                    <div class="input-icon right">
-                                                        <i class="fa fa-user"></i>
-                                                        <input id="inputname" type="text" placeholder="" class="form-control" required="" value="<?php echo $nome ?>"/>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <div class="panel panel-green">
+                                    <div class="panel-heading">Alterar Senha</div>
+                                    <div class="panel-body pan">
+                                        <form action="#">
+                                            <div class="form-body pal">
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="inputoldsenha" class="control-label">Senha Antiga *</label>
+                                                            <div class="input-icon right">
+                                                                <i class="ace-icon fa fa-lock"></i>
+                                                                <input id="inputoldsenha" type="password" placeholder="" class="form-control" required=""/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="inputnewsenha" class="control-label">Nova Senha *</label>
+                                                            <div class="input-icon right">
+                                                                <i class="ace-icon fa fa-lock"></i>
+                                                                <input id="inputnewsenha" type="password" placeholder="" class="form-control" required=""/>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="form-group">
+                                                            <label for="inputconf" class="control-label">Confirmar Senha *</label>
+                                                            <div class="input-icon right">
+                                                                <i class="ace-icon fa fa-lock"></i>
+                                                                <input id="inputconf" type="password" placeholder="" class="form-control" required=""/>
+                                                            </div>
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="form-group mbn">
-                                            <div class="checkbox">
-                                                <label>
-                                                    <input id="inputativo" tabindex="5" type="checkbox" <?php echo $ativo ?>/>&nbsp; Ativo
-                                                </label>
+                                            <div class="form-actions text-right pal">
+                                                <button type="button" class="btn btn-primary" onclick="cancelar();">
+                                                    Cancelar</button>
+                                                <button type="button" class="btn btn-primary" onclick="cadastrar_novasenha();">
+                                                    Salvar</button>
                                             </div>
-                                        </div>
+                                        </form>
                                     </div>
-                                    <div class="form-actions text-right pal">
-                                        <button type="button" class="btn btn-primary" onclick="cancelar();">
-                                            Cancelar</button>
-                                        <button type="button" class="btn btn-primary" onclick="editar_perfil();">
-                                            Salvar</button>
-                                    </div>
-                                </form>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</div>
     </div>
 </div>
 <script src="script/jquery-1.10.2.min.js"></script>
@@ -292,28 +296,42 @@ $total_concluidas = $db->total_concluidas();
 </script>
 <script type="text/javascript">
     function cancelar(){
-        if(confirm("Deseja cancelar?")==true){
-            open("perfil_list.php","_self");
+        if(confirm("Deseja cancelar a alteração de senha ?")==true){
+            open("menu.php","_self");
         }
     }
-    function editar_perfil(){
-        var nome 		= $('#inputname').val();
-        if(nome==''){
-            alert("Preencha o campo Perfil");
+
+    function cadastrar_novasenha(){
+        var old_senha =  $('#inputoldsenha').val();
+        var new_senha =  $('#inputnewsenha').val();
+        var conf_senha = $('#inputconf').val();
+
+        if(old_senha == ''){
+            alert("Informe a Senha Antiga");
             return;
         }
-        if ( $('#inputativo').is(":checked")){
-            var ativo		= '1';
-        }else{
-            var ativo		= '0';
+
+        if(new_senha == ''){
+            alert("Informe uma nova senha");
+            return;
         }
 
-        var dadosajax = {
-            'id' : <?php echo $id ?>,
-            'nome': nome,
-            'ativo': ativo
+        if(new_senha == old_senha){
+            alert("A senha nova não pode ser iguala antiga.");
+            return;
+        }
+
+        if((conf_senha != new_senha) || conf_senha == ''){
+            alert("Os campos Nova Senha e Confimar Senha, devem conter a mesma senha.");
+            return;
+        }
+
+       var dadosajax = {
+            'old_senha': old_senha,
+            'new_senha': new_senha,
+            'usuário' : <?php echo "'$usuario'" ?>
         };
-        pageurl = './ajax/edita_perfil.php';
+        pageurl = './ajax/altera_senha.php';
         //para consultar mais opcoes possiveis numa chamada ajax
         //http://api.jquery.com/jQuery.ajax/
         $.ajax({
@@ -334,15 +352,16 @@ $total_concluidas = $db->total_concluidas();
             success: function(result)
             {
                 if(result=='1'){
-                    alert('Perfil editado com sucesso');
-                    $('#inputname').val('');
-                    $('#inputativo').val('');
+                    alert('Senha alterada com sucesso');
+                    $('#inputoldsenha').val('');
 
-                    open("perfil_new.php","_self");
+                    open("logout.php","_self");
                     //$('#dynamictable').DataTable().ajax.reload(null,false).draw();
 
                 } else if(result=='0'){
-                    alert('Erro ao editar Perfil');
+                    alert('Erro ao alterar senha');
+                }else if (result=='2'){
+                    alert('Senha antiga inválida');
                 }
             }
         });

@@ -107,7 +107,7 @@ while ($retorno=mysqli_fetch_array ( $result )){
         $paga='Paga';
     }
 
-    if ($id_status == '1'){
+    if ($id_status == '1' || $id_status == '2'){
     $acao = "<div class='hidden-sm hidden-xs action-buttons'>
 		<!--<a class='blue' onclick='abre_frame_visualizar($id);'>
 			<i class='ace-icon fa fa-search-plus bigger-130'></i>

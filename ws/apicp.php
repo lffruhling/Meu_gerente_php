@@ -361,7 +361,7 @@ $app->post('/device/registration', function() use($app){
         $pdo = new PDO('mysql:host=localhost;dbname=mg', 'root', '');
         $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
-        $stmt = $pdo->prepare('UPDATE tb_cliente SET ID_DEVICE_CLI = :device_id WHERE ID_CLI = :id_tec');
+        $stmt = $pdo->prepare('UPDATE tb_colaboradores SET ID_DEVICE_COLAB = :device_id WHERE ID_COLAB = :id_tec');
         $stmt->execute(array(
             ':id_tec' => $id_tec,
             ':device_id' => $device_id

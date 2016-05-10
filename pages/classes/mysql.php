@@ -1218,6 +1218,7 @@ class MySQL{
             ));
 
             $id_os = $this->con->lastInsertId();
+            $this->manda_push_nova_os($id_tec);
         }catch(PDOException $e){
             return 'Error: '.$e->getMessage();
             $retorno = 'Error: '.$e->getMessage();
@@ -1565,6 +1566,73 @@ class MySQL{
         }catch(PDOException $e){
             return 'Error: '.$e->getMessage();
         }
+    }
+
+    public function total_abertas(){
+        $consulta = $this->con->query("select count(ID_OS) abertas from tb_os where ID_STATUS in (1,2);");
+        while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+            $retorno = $linha['abertas'];
+        }
+        return $retorno;
+    }
+
+    public function total_orcadas(){
+        $consulta = $this->con->query("select count(ID_OS) orcadas from tb_os where ID_STATUS in (3);");
+        while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+            $retorno = $linha['orcadas'];
+        }
+        return $retorno;
+    }
+
+    public function total_concluidas(){
+        $consulta = $this->con->query("select count(ID_OS) concluidas from tb_os where ID_STATUS in (4);");
+        while ($linha = $consulta->fetch(PDO::FETCH_ASSOC)) {
+            $retorno = $linha['concluidas'];
+        }
+        return $retorno;
+    }
+
+    public function manda_push_nova_os($tecnico){
+        $key = "AIzaSyAYFaIiMrwXPKoap58vv6RZPjIpovrn4qQ";
+        if($this->query("SELECT ID_DEVICE_COLAB FROM tb_colaboradores WHERE ID_COLAB = $tecnico")){
+            $row = mysql_fetch_row($this->result);
+            $device = $row[0];
+        }
+
+        $message = "Você tem uma nova tarefa!";
+        $author = "";
+        $title = "Meu Gerente";
+        send_push($key,$device,$message,$author,$title);
+        $retorno = 1;
+
+        return $retorno;
+    }
+
+    public function altera_senha($usuario,$old_senha,$new_senha){
+        $result = $this->con->prepare( " SELECT ID_COLAB FROM tb_colaboradores Where USUARIO_COLAB = ? AND SENHA_COLAB = ?");
+        $result->bindParam(1,$usuario);
+        $result->bindParam(2,base64_encode($old_senha));
+
+        if($result->execute()){
+            $row = $result->fetch(PDO::FETCH_BOTH);
+            $id_colab = utf8_encode($row[0]);
+        }
+
+        if ($id_colab != 0){
+            $result = $this->con->prepare(	" UPDATE tb_colaboradores SET   ".
+                                            " SENHA_COLAB = :new_senha      ".
+                                            " WHERE ID_COLAB = :id           ");
+
+            $result->execute(array(
+                ':id'=> (int) $id_colab,
+                ':new_senha'=> base64_encode($new_senha)
+            ));
+            $retorno = 1;
+        }else{
+            $retorno = 2;
+        }
+
+        return $retorno;
     }
 
 	};

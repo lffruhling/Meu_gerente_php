@@ -77,7 +77,7 @@
         </div>
         <div class="col-lg-12 text-center">
             <p>
-                <a href="#">Esqueceu sua Senha?</a> 
+                <a href="javascript:void(0);" onclick="rec_senha();">Esqueceu sua Senha?</a>
             </p>
         </div>
     </div>
@@ -86,6 +86,9 @@
 	<script language="JavaScript" type="text/javascript" src="./js/sprinkle.js"></script>
 	<script language="JavaScript" type="text/javascript" src="./js/glide.js"></script>
     <script type="text/javascript">
+        function rec_senha(){
+            alert("Entre em contato com um Adminsitrador e solicite a alteração de sua senha!");
+        }
     	function validar_login()
 	{
 		//var campo = document.getElementById('inputName');

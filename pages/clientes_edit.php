@@ -67,6 +67,10 @@ $celular= $db->_e_celular_cli($id);
 $email  = $db->_e_email_cli($id);
 $ativo  = $db->_e_ativo_cli($id);
 
+$total_abertas = $db->total_abertas();
+$total_orcadas = $db->total_orcadas();
+$total_concluidas = $db->total_concluidas();
+
 ?>
 <div>
     <!--INICIO MENU TOPO-->
@@ -77,17 +81,17 @@ $ativo  = $db->_e_ativo_cli($id);
                 <a id="logo" href="menu.php" class="navbar-brand"><span class="fa fa-rocket"></span><span class="logo-text">Meu Gerente</span><span style="display: none" class="logo-text-icon">µ</span></a></div>
             <div class="topbar-main"><a id="menu-toggle" href="#" class="hidden-xs"><i class="fa fa-bars"></i></a>
                 <ul class="nav navbar navbar-top-links navbar-right mbn">
-                    <li class="dropdown"><a data-hover="dropdown" href="#" class="dropdown-toggle"><i class="fa fa-bell fa-fw"></i><span class="badge badge-green">orc 3</span></a>
+                    <li class="dropdown"><a data-hover="dropdown" href="os_list.php" class="dropdown-toggle"><i class="fa fa-bell fa-fw"></i><span class="badge badge-green"><?php echo "Abertas ".$total_abertas ?></span>&nbsp;</a>
 
                     </li>
-                    <li class="dropdown"><a data-hover="dropdown" href="#" class="dropdown-toggle"><i class="fa fa-envelope fa-fw"></i><span class="badge badge-orange">7</span></a>
+                    <li class="dropdown"><a data-hover="dropdown" href="os_list.php" class="dropdown-toggle"><i class="fa fa-envelope fa-fw"></i><span class="badge badge-orange"><?php echo "Orcadas ".$total_orcadas ?></span>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</a>
 
                     </li>
-                    <li class="dropdown"><a data-hover="dropdown" href="#" class="dropdown-toggle"><i class="fa fa-tasks fa-fw"></i><span class="badge badge-yellow">8</span></a>
+                    <li class="dropdown"><a data-hover="dropdown" href="os_list.php" class="dropdown-toggle"><i class="fa fa-tasks fa-fw"></i><span class="badge badge-yellow"><?php echo "Concluídas ".$total_concluidas ?></span>&nbsp;&nbsp;&nbsp;&nbsp;</a>
                     </li>
                     <li class="dropdown topbar-user"><a data-hover="dropdown" href="#" class="dropdown-toggle"><img src="images/avatar/businessman.png" alt="" class="img-responsive img-circle"/>&nbsp;<span class="hidden-xs"><?php echo $_SESSION['UsuarioNome']; ?></span>&nbsp;<span class="caret"></span></a>
                         <ul class="dropdown-menu dropdown-user pull-right">
-                            <li><a href="#"><i class="fa fa-lock"></i>Alterar Senha</a></li>
+                            <li><a href="altera_senha.php"><i class="fa fa-lock"></i>Alterar Senha</a></li>
                             <li><a href="logout.php"><i class="fa fa-key"></i>Sair</a></li>
                         </ul>
                     </li>
@@ -336,7 +340,7 @@ $ativo  = $db->_e_ativo_cli($id);
                                         </div>
                                     </div>
                                     <div class="form-actions text-right pal">
-                                        <button type="button" class="btn btn-primary">
+                                        <button type="button" class="btn btn-primary" onclick="cancelar();">
                                             Cancelar</button>
                                         <button type="button" class="btn btn-primary" onclick="edita_cliente();">
                                             Salvar</button>
@@ -410,6 +414,12 @@ $ativo  = $db->_e_ativo_cli($id);
 
 </script>
 <script type="text/javascript">
+    function cancelar(){
+        if(confirm("Deseja cancelar?")==true){
+            open("clientes_list.php","_self");
+        }
+    }
+
     function edita_cliente(){
         var cnpj = $('#inputcnpj').val();
         var cpf = $('#inputcpf').val();
