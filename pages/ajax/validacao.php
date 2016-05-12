@@ -1,41 +1,47 @@
 <?php
-/**
- * Created by PhpStorm.
- * User: Leonardo
- * Date: 07/05/2016
- * Time: 11:23
- */
+
     // Verifica se houve POST e se o usuário ou a senha é(são) vazio(s)
     if (!empty($_POST) AND (empty($_POST['usuario']) OR empty($_POST['senha']))) {
-        header("Location: login2.php"); exit;
+        header("Location: index.php"); exit;
     }
-
-    // Tenta se conectar ao servidor MySQL
-    mysql_connect('localhost', 'root', '') or trigger_error(mysql_error());
-
-    // Tenta se conectar a um banco de dados MySQL
-    mysql_select_db('mg') or trigger_error(mysql_error());
 
     $usuario = mysql_real_escape_string($_POST['usuario']);
     $senha = mysql_real_escape_string($_POST['senha']);
 
+
+    $pdo = new PDO('mysql:host=localhost;dbname=mg', 'root', '');
+    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+    $result = $pdo->prepare( " SELECT ID_COLAB, NOME_COLAB, ID_PERFIL  FROM tb_colaboradores WHERE (USUARIO_COLAB = ?) AND (SENHA_COLAB = ?) AND (ATIVO = 1) LIMIT 1");
+
+
+    $result->bindParam(1,$usuario);
+    $result->bindParam(2,base64_encode($senha));
+
+    if($result->execute()){
+        $row = $result->fetch(PDO::FETCH_BOTH);
+        $id_colab = $row[0];
+        $nome_colab = utf8_encode($row[1]);
+        $perfil_id_colab = $row[2];
+    }
+
     // Validação do usuário/senha digitados
-    $sql = "SELECT `ID_COLAB`, `NOME_COLAB`, `ID_PERFIL` FROM `tb_colaboradores` WHERE (`USUARIO_COLAB` = '". $usuario ."') AND (`SENHA_COLAB` = '". base64_encode($senha) ."') AND (`ATIVO` = 1) LIMIT 1";
-    $query = mysql_query($sql);
-    if (mysql_num_rows($query) != 1) {
+    if ($result->rowCount() != 1) {
         // Mensagem de erro quando os dados são inválidos e/ou o usuário não foi encontrado
         echo 0;
+        //echo $sql;
+
         exit;
     } else {
         // Salva os dados encontados na variável $resultado
-        $resultado = mysql_fetch_assoc($query);
+        //$resultado = mysql_fetch_assoc($query);
 
         // Se a sessão não existir, inicia uma
         if (!isset($_SESSION)) session_start();
         // Salva os dados encontrados na sessão
-        $_SESSION['UsuarioID'] = $resultado['ID_COLAB'];
-        $_SESSION['UsuarioNome'] = $resultado['NOME_COLAB'];
-        $_SESSION['UsuarioNivel'] = $resultado['ID_PERFIL'];
+        $_SESSION['UsuarioID'] = $id_colab;
+        $_SESSION['UsuarioNome'] = $nome_colab;
+        $_SESSION['UsuarioNivel'] = $perfil_id_colab;
 
         // Redireciona o visitante
         //header("Location: index2.php");

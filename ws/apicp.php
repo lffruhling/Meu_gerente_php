@@ -50,7 +50,7 @@ $app->get('/clientes',function(){
     $retorno = array();
  
     # Abrir conexão com banco de dados...
-    $conexao = new MySQLi("localhost","u564893296_root","06111992","u564893296_mg");
+    $conexao = new MySQLi("localhost","root","","mg");
  
     # Validar se houve conexão...
     if(!$conexao){ echo "Não foi possível se conectar ao banco de dados"; exit;}
@@ -86,7 +86,7 @@ $app->get('/usuarios',function(){
     $retorno = array();
  
     # Abrir conexão com banco de dados...
-    $conexao = new MySQLi("localhost","u564893296_root","06111992","u564893296_mg");
+    $conexao = new MySQLi("localhost","root","","mg");
  	//$conexao = new MySQLi("localhost","root","","mg");
     # Validar se houve conexão...
     if(!$conexao){ echo "Não foi possível se conectar ao banco de dados"; exit;}

@@ -127,7 +127,7 @@
 				//se foi um erro
 				else
 				{
-					alert("Usuário ou senha inválida");
+					alert("Usuário ou senha inválida!");
 				}
 	 
 			}

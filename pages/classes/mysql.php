@@ -1,5 +1,5 @@
 <?php
-//include "../utils/send_push.php";
+include "send_push.php";
 
 // Conexão com o banco
 static $dbhost = 'localhost';
@@ -1594,9 +1594,11 @@ class MySQL{
 
     public function manda_push_nova_os($tecnico){
         $key = "AIzaSyAYFaIiMrwXPKoap58vv6RZPjIpovrn4qQ";
-        if($this->query("SELECT ID_DEVICE_COLAB FROM tb_colaboradores WHERE ID_COLAB = $tecnico")){
-            $row = mysql_fetch_row($this->result);
-            $device = $row[0];
+        $result = $this->con->prepare( " SELECT ID_DEVICE_COLAB FROM tb_colaboradores WHERE ID_COLAB = ?");
+        $result->bindParam(1,$tecnico);
+        if($result->execute()){
+            $row = $result->fetch(PDO::FETCH_BOTH);
+            $device = utf8_encode($row[0]);
         }
 
         $message = "Você tem uma nova tarefa!";

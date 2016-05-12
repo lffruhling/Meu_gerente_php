@@ -1,5 +1,5 @@
 ﻿<?php
-include "mysql.php";
+/*include "mysql.php";
 
 $db = new MySQL();
 
@@ -15,6 +15,8 @@ if($db->conecta()){
 }
 
 $db->desconecta();
-unset($db);
+unset($db);*/
+include "../utils/send_push.php";
+
 
 ?>

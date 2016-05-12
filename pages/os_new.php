@@ -327,7 +327,7 @@ $total_concluidas = $db->total_concluidas();
                 <div class="form-actions text-right pal">
                     <button type="button" class="btn btn-primary" onclick="adiciona_produto();">Adiconar Produto</button>
                 </div>
-                <button class="btn-green" type="submit" onclick="cadastrar_os()">Salvar</button>
+                <button class="btn-green" type="submit" onclick="cadastrar_os();">Salvar</button>
             </div>
         </li>
     </ul>
@@ -512,7 +512,7 @@ $total_concluidas = $db->total_concluidas();
 
                 } else if(result==0){
                     alert('Erro ao adicionar Ordem de Serviço');
-                }
+                }else(alert(result))
             }
         });
     }
